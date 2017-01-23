@@ -5,9 +5,47 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprites name="game_gui">
+      <sprite>sprites\spr_edit_map</sprite>
+      <sprite>sprites\spr_land</sprite>
+      <sprite>sprites\spr_court</sprite>
+      <sprite>sprites\spr_sea</sprite>
+    </sprites>
+    <sprite>sprites\spr_aim</sprite>
+    <sprites name="chess_pieces">
+      <sprite>sprites\spr_jiang</sprite>
+    </sprites>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bg_main</background>
+    <background>background\bj_main2</background>
+    <background>background\bj_main3</background>
+    <background>background\background3</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <scripts name="map_editor">
+      <script>scripts\spr_map_editor.gml</script>
+      <script>scripts\scp_com_map.gml</script>
+    </scripts>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\Game_title</font>
+  </fonts>
+  <objects name="objects">
+    <object>objects\obj_window_info</object>
+    <object>objects\obj_edit_map</object>
+    <object>objects\obj_edit_gui</object>
+    <object>objects\obj_aim</object>
+    <objects name="chess_pieces">
+      <object>objects\obj_jiang</object>
+    </objects>
+    <object>objects\obj_sea</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_main</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
