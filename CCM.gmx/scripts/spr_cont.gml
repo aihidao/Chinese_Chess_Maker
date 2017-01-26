@@ -1,0 +1,12 @@
+global.P_TOOL=8;
+global.CHE=1;
+global.BING=2;
+global.JIANG=3;
+global.MA=4;
+global.PAO=5;
+global.SHI=6;
+global.RENSHI=7;
+global.SHUAI=8;
+global.XIANG=9;
+global.MUMU=10;
+global.ZU=11;

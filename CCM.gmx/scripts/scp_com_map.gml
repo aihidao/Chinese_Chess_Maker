@@ -1,4 +1,5 @@
 //----------------------------------------淹没判定(入り)
+/*
 for(i=0;i<global.ROW;++i){
     for(j=0;j<global.COL;++j){
             //top right
@@ -43,7 +44,7 @@ for(i=0;i<global.ROW;++i){
             }  
     }
 }
-
+*/
 //地图初始化
 room_tile_clear(global.gameroom);
 for(i=0;i<global.ROW;i++){
@@ -164,7 +165,7 @@ for(i=0;i<global.ROW;i++){
     }
 }
 //----------------------------------------地图修补----------------------------------------------------
-
+/*
 for(i=0;i<global.ROW;i++){
     for(j=0;j<global.COL;j++){
             //top right
@@ -197,6 +198,7 @@ for(i=0;i<global.ROW;i++){
                 }
                 
                 //修补宫殿与水域
+                /*
                 temp2=0;
                 if(global.board[i+1,j-1]==0){
                     temp2+=1;   
@@ -222,14 +224,10 @@ for(i=0;i<global.ROW;i++){
                 if(global.board[i,j-1]==0){
                     temp2+=128;   
                 }
+                
             }         
     }
 }
-
+*/
 //--------------------------------------------------------生成地图------------------------------------------------
-
-for(i=0;i<global.ROW;i++){
-    for(j=0;j<global.COL;j++){
-        room_tile_add(global.gameroom,bg_main, (global.game_map[i,j]%9)*50, int64( (global.game_map[i,j]/9))*50, 50, 50, i*50, j*50, 200);
-    }
-}
+scp_draw_map();

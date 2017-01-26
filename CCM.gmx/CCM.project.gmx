@@ -12,10 +12,58 @@
       <sprite>sprites\spr_court</sprite>
       <sprite>sprites\spr_sea</sprite>
     </sprites>
-    <sprite>sprites\spr_aim</sprite>
-    <sprites name="chess_pieces">
-      <sprite>sprites\spr_jiang</sprite>
+    <sprites name="pieces">
+      <sprites name="black">
+        <sprite>sprites\spr_b_c</sprite>
+        <sprite>sprites\spr_b_j</sprite>
+        <sprite>sprites\spr_b_m</sprite>
+        <sprite>sprites\spr_b_x</sprite>
+        <sprite>sprites\spr_b_s</sprite>
+        <sprite>sprites\spr_b_p</sprite>
+        <sprite>sprites\spr_b_z</sprite>
+      </sprites>
+      <sprite>sprites\spr_pieces</sprite>
+      <sprites name="red">
+        <sprite>sprites\spr_r_c</sprite>
+        <sprite>sprites\spr_r_m</sprite>
+        <sprite>sprites\spr_r_x</sprite>
+        <sprite>sprites\spr_r_s</sprite>
+        <sprite>sprites\spr_r_j</sprite>
+        <sprite>sprites\spr_r_b</sprite>
+        <sprite>sprites\spr_r_p</sprite>
+      </sprites>
+      <sprite>sprites\spr_other_pieces</sprite>
+      <sprite>sprites\spr_my_pieces</sprite>
+      <sprites name="spr_nocolor">
+        <sprite>sprites\spr_che</sprite>
+        <sprite>sprites\spr_bing</sprite>
+        <sprite>sprites\spr_jiang</sprite>
+        <sprite>sprites\spr_ma</sprite>
+        <sprite>sprites\spr_pao</sprite>
+        <sprite>sprites\spr_shi</sprite>
+        <sprite>sprites\sor_renshi</sprite>
+        <sprite>sprites\spr_shuai</sprite>
+        <sprite>sprites\spr_xiang</sprite>
+        <sprite>sprites\spr_mumu</sprite>
+        <sprite>sprites\spr_zu</sprite>
+      </sprites>
     </sprites>
+    <sprites name="map_editor">
+      <sprite>sprites\spr_ME_water</sprite>
+      <sprite>sprites\spr_ME_land</sprite>
+      <sprite>sprites\spr_ME_right</sprite>
+      <sprite>sprites\spr_ME_left</sprite>
+      <sprite>sprites\spr_ME_all</sprite>
+      <sprite>sprites\spr_ME_9land</sprite>
+      <sprite>sprites\spr_ME_9sea</sprite>
+      <sprite>sprites\spr_ME_9court</sprite>
+    </sprites>
+    <sprites name="backWorker">
+      <sprite>sprites\spr_aim</sprite>
+      <sprite>sprites\spr_bg</sprite>
+      <sprite>sprites\spr_pp</sprite>
+    </sprites>
+    <sprite>sprites\sprite15</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -28,20 +76,69 @@
     <scripts name="map_editor">
       <script>scripts\spr_map_editor.gml</script>
       <script>scripts\scp_com_map.gml</script>
+      <script>scripts\scp_draw_map.gml</script>
+      <scripts name="draw_sprs">
+        <script>scripts\scp_draw_water.gml</script>
+        <script>scripts\scp_draw_land.gml</script>
+        <script>scripts\scp_draw_left_court.gml</script>
+        <script>scripts\scp_draw_right_court.gml</script>
+        <script>scripts\scp_draw_pieces.gml</script>
+      </scripts>
+      <script>scripts\spr_cont.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Game_title</font>
   </fonts>
   <objects name="objects">
-    <object>objects\obj_window_info</object>
-    <object>objects\obj_edit_map</object>
-    <object>objects\obj_edit_gui</object>
-    <object>objects\obj_aim</object>
-    <objects name="chess_pieces">
-      <object>objects\obj_jiang</object>
+    <objects name="map_editor">
+      <object>objects\obj_ME_water</object>
+      <object>objects\obj_ME_land</object>
+      <object>objects\obj_ME_right</object>
+      <object>objects\obj_ME_left</object>
+      <object>objects\obj_ME_all</object>
+      <object>objects\obj_ME_9land</object>
+      <object>objects\obj_ME_9lcourt</object>
+      <object>objects\obj_ME_button</object>
     </objects>
-    <object>objects\obj_sea</object>
+    <objects name="pieces">
+      <objects name="pieces">
+        <object>objects\obj_che</object>
+        <object>objects\obj_bing</object>
+        <object>objects\obj_jiang</object>
+        <object>objects\obj_ma</object>
+        <object>objects\obj_pao</object>
+        <object>objects\obj_shi</object>
+        <object>objects\obj_renshi</object>
+        <object>objects\obj_shuai</object>
+        <object>objects\obj_xiang</object>
+        <object>objects\obj_mumu</object>
+        <object>objects\obj_zu</object>
+      </objects>
+      <objects name="ME_pieces">
+        <object>objects\obj_ME_che</object>
+        <object>objects\obj_ME_bing</object>
+        <object>objects\obj_ME_jiang</object>
+        <object>objects\obj_ME_ma</object>
+        <object>objects\obj_ME_pao</object>
+        <object>objects\obj_ME_shi</object>
+        <object>objects\obj_ME_renshi</object>
+        <object>objects\obj_ME_shuai</object>
+        <object>objects\obj_ME_xiang</object>
+        <object>objects\obj_ME_mumu</object>
+        <object>objects\obj_ME_zu</object>
+      </objects>
+      <object>objects\obj_piece</object>
+      <object>objects\obj_ME_piece</object>
+    </objects>
+    <objects name="backWorker">
+      <object>objects\obj_window_info</object>
+      <object>objects\obj_sea</object>
+      <object>objects\obj_aim</object>
+      <object>objects\obj_edit_gui</object>
+      <object>objects\obj_edit_map</object>
+      <object>objects\obj_pp</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>

@@ -8,28 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="61">
       <action>
         <libid>1</libid>
@@ -47,10 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.draw_type&gt;0){
-    global.draw_type--;
-}else{
-    global.draw_type=0;
+            <string>if(global.draw_type&gt;=100){
+    if(global.place_player&gt;1){
+        global.place_player--;
+        global.draw_type-=100;
+    }
 }
 </string>
           </argument>
@@ -74,20 +53,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-global.c_col=(window_view_mouse_get_y(1)-window_view_mouse_get_y(1)%50)/50;
-global.c_row=(window_view_mouse_get_x(1)-window_view_mouse_get_x(1)%50)/50;
-
-global.board[global.c_row,global.c_col]=0;
-//global.game_map[global.c_row-1,global.c_col-1]=37;
-
-scp_com_map();
-room_restart();
-*/
-if(global.draw_type&lt;2){
-    global.draw_type++;
-}else{
-    global.draw_type=2;
+            <string>if(global.draw_type&gt;=100){
+    if(global.place_player&lt;8){
+        global.place_player++;
+        global.draw_type+=100;
+    }
 }
 </string>
           </argument>
@@ -111,14 +81,7 @@ if(global.draw_type&lt;2){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.c_col=(window_view_mouse_get_y(1)-window_view_mouse_get_y(1)%50)/50;
-global.c_row=(window_view_mouse_get_x(1)-window_view_mouse_get_x(1)%50)/50;
-
-global.board[global.c_row,global.c_col]=2;
-//global.game_map[global.c_row-1,global.c_col-1]=37;
-
-scp_com_map();
-room_restart();
+            <string>global.draw_type=0;
 </string>
           </argument>
         </arguments>
@@ -141,17 +104,52 @@ room_restart();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.c_col=(window_view_mouse_get_y(1)-window_view_mouse_get_y(1)%50)/50;
+            <string>
+global.c_col=(window_view_mouse_get_y(1)-window_view_mouse_get_y(1)%50)/50;
 global.c_row=(window_view_mouse_get_x(1)-window_view_mouse_get_x(1)%50)/50;
+switch(global.draw_type){
+    case 20:scp_draw_water();break;
+    case 21:scp_draw_land();break;
+    case 22:scp_draw_left_court();break;
+    case 23:scp_draw_right_court();break;
+    default:scp_draw_pieces();
+}
 
-global.board[global.c_row,global.c_col]=global.draw_type;
-//global.game_map[global.c_row-1,global.c_col-1]=37;
-
-scp_com_map();
-//room_goto(global.gameroom);
-room_restart();
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/*
+if(global.draw_type&gt;=0&amp;&amp;global.draw_type&lt;=2){
+    scp_com_map();
+}else{
+    scp_draw_map();
+}
+*/
+scp_draw_map();
+with(obj_ME_piece){
+    image_index=global.place_player;
+}
 </string>
           </argument>
         </arguments>
