@@ -1,20 +1,15 @@
-global.draw_type=0;
-global.mune_width=150;
-global.screen_move_speed=10;
-global.place_player=1;
-global.chess_player=1;
-global.findnumber=0;
+spr_cont();
 global.map_name=get_string("请输入地图名称","NewMap");
 global.ROW=get_integer("请输入棋盘宽度",9);
 global.COL=get_integer("请输入棋盘高度",10);
 global.player_number=get_integer("请输入玩家人数",2);
-global.select_id=0;
+
+
 global.gameroom=room_add();
 room_set_width(global.gameroom,global.ROW*50);
 room_set_height(global.gameroom,global.COL*50);
 room_set_persistent(global.gameroom,false);
 room_set_background_colour(global.gameroom, c_black, true);
-spr_cont();
 
 
 
@@ -51,13 +46,10 @@ scp_com_map();
 
 
 //--------------------------------------------------------显示设置------------------------------------------------
- display_set_gui_size(global.window_width,global.window_height);
-//window_set_size(display_get_gui_width(),display_get_gui_height());
-//surface_resize(application_surface,display_get_gui_width(),display_get_gui_height());
+display_set_gui_size(global.window_width,global.window_height);
 room_set_view(global.gameroom, 0, true, global.ROW*50,global.COL*50, global.window_width,global.window_height, 0, 0, global.window_width,global.window_height, 8*50, 8*50, 4, 4, -1);
-//room_set_view(global.gameroom, 2, true, global.ROW*50,global.COL*50, global.mune_width, global.COL*50, 0, 0, global.mune_width, global.COL*50, 0, 0, 4, 4, -1);
 room_set_view(global.gameroom, 1, true, 0, 0, global.view_width, global.view_height,global.mune_width+global.margin_width, global.margin_height, global.view_width, global.view_height, 8*50, 8*50, 10, 10, obj_aim);
-room_set_view_enabled( global.gameroom, true );
+room_set_view_enabled( global.gameroom,true);
 
 
 //--------------------------------------------加入工具栏---------------------------------------------------------
@@ -78,6 +70,7 @@ room_instance_add(global.gameroom,50,50,obj_ME_shuai);
 room_instance_add(global.gameroom,50,50,obj_ME_xiang);
 room_instance_add(global.gameroom,50,50,obj_ME_mumu);
 room_instance_add(global.gameroom,50,50,obj_ME_zu);
+room_instance_add(global.gameroom,50,50,obj_ME_clear);
 //---
 global.ti=(global.mune_width-global.mune_width%50)/50;
 global.tj=15;

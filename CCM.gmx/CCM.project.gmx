@@ -13,27 +13,7 @@
       <sprite>sprites\spr_sea</sprite>
     </sprites>
     <sprites name="pieces">
-      <sprites name="black">
-        <sprite>sprites\spr_b_c</sprite>
-        <sprite>sprites\spr_b_j</sprite>
-        <sprite>sprites\spr_b_m</sprite>
-        <sprite>sprites\spr_b_x</sprite>
-        <sprite>sprites\spr_b_s</sprite>
-        <sprite>sprites\spr_b_p</sprite>
-        <sprite>sprites\spr_b_z</sprite>
-      </sprites>
       <sprite>sprites\spr_pieces</sprite>
-      <sprites name="red">
-        <sprite>sprites\spr_r_c</sprite>
-        <sprite>sprites\spr_r_m</sprite>
-        <sprite>sprites\spr_r_x</sprite>
-        <sprite>sprites\spr_r_s</sprite>
-        <sprite>sprites\spr_r_j</sprite>
-        <sprite>sprites\spr_r_b</sprite>
-        <sprite>sprites\spr_r_p</sprite>
-      </sprites>
-      <sprite>sprites\spr_other_pieces</sprite>
-      <sprite>sprites\spr_my_pieces</sprite>
       <sprites name="spr_nocolor">
         <sprite>sprites\spr_che</sprite>
         <sprite>sprites\spr_bing</sprite>
@@ -43,8 +23,8 @@
         <sprite>sprites\spr_shi</sprite>
         <sprite>sprites\sor_renshi</sprite>
         <sprite>sprites\spr_shuai</sprite>
-        <sprite>sprites\spr_xiang</sprite>
         <sprite>sprites\spr_mumu</sprite>
+        <sprite>sprites\spr_xiang</sprite>
         <sprite>sprites\spr_zu</sprite>
       </sprites>
     </sprites>
@@ -96,9 +76,6 @@
       <object>objects\obj_ME_land</object>
       <object>objects\obj_ME_right</object>
       <object>objects\obj_ME_left</object>
-      <object>objects\obj_ME_all</object>
-      <object>objects\obj_ME_9land</object>
-      <object>objects\obj_ME_9lcourt</object>
       <object>objects\obj_ME_button</object>
     </objects>
     <objects name="pieces">
@@ -127,6 +104,7 @@
         <object>objects\obj_ME_xiang</object>
         <object>objects\obj_ME_mumu</object>
         <object>objects\obj_ME_zu</object>
+        <object>objects\obj_ME_clear</object>
       </objects>
       <object>objects\obj_piece</object>
       <object>objects\obj_ME_piece</object>

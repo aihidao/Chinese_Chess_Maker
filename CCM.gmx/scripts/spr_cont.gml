@@ -1,3 +1,13 @@
+global.draw_type=0;
+global.mune_width=150;
+global.screen_move_speed=10;
+global.place_player=1;
+global.chess_player=1;
+global.findnumber=0;
+global.select_id=0;
+global.select=0;
+global.remove_piece=0;
+
 global.P_TOOL=8;
 global.CHE=1;
 global.BING=2;
@@ -10,3 +20,4 @@ global.SHUAI=8;
 global.XIANG=9;
 global.MUMU=10;
 global.ZU=11;
+global.CLEAR=12;

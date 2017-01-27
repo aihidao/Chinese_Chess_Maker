@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>if(global.draw_type&gt;=100){
-    if(global.place_player&gt;1){
-        global.place_player--;
-        global.draw_type-=100;
+    if(global.place_player&lt;8){
+        global.place_player++;
+        global.draw_type+=100;
     }
 }
 </string>
@@ -54,9 +54,9 @@
           <argument>
             <kind>1</kind>
             <string>if(global.draw_type&gt;=100){
-    if(global.place_player&lt;8){
-        global.place_player++;
-        global.draw_type+=100;
+    if(global.place_player&gt;1){
+        global.place_player--;
+        global.draw_type-=100;
     }
 }
 </string>
@@ -64,7 +64,7 @@
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="51">
+    <event eventtype="6" enumb="57">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -81,7 +81,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.draw_type=0;
+            <string>
+if(global.draw_type&lt;100){
+    global.draw_type=0;
+}
+
 </string>
           </argument>
         </arguments>
@@ -147,6 +151,7 @@ if(global.draw_type&gt;=0&amp;&amp;global.draw_type&lt;=2){
 }
 */
 scp_draw_map();
+global.pieces_number=instance_number(obj_piece);
 with(obj_ME_piece){
     image_index=global.place_player;
 }
