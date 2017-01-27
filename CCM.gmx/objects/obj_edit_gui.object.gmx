@@ -108,8 +108,8 @@ if(global.draw_type&lt;100){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.my_x = display_mouse_get_x(); 
-global.my_y = display_mouse_get_y(); 
+            <string>global.my_x = window_mouse_get_x(); 
+global.my_y = window_mouse_get_y(); 
 if(global.my_x&gt;global.mune_width){
     global.c_col=(window_view_mouse_get_y(1)-window_view_mouse_get_y(1)%50)/50;
     global.c_row=(window_view_mouse_get_x(1)-window_view_mouse_get_x(1)%50)/50;
