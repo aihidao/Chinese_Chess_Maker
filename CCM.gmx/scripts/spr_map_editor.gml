@@ -47,8 +47,9 @@ scp_com_map();
 
 //--------------------------------------------------------显示设置------------------------------------------------
 display_set_gui_size(global.window_width,global.window_height);
-room_set_view(global.gameroom, 0, true, global.ROW*50,global.COL*50, global.window_width,global.window_height, 0, 0, global.window_width,global.window_height, 8*50, 8*50, 4, 4, -1);
+room_set_view(global.gameroom, 0, true, global.ROW*50+global.mune_width,global.COL*50, global.window_width,global.window_height, 0, 0, global.window_width,global.window_height, 8*50, 8*50, 4, 4, -1);
 room_set_view(global.gameroom, 1, true, 0, 0, global.view_width, global.view_height,global.mune_width+global.margin_width, global.margin_height, global.view_width, global.view_height, 8*50, 8*50, 10, 10, obj_aim);
+room_set_view(global.gameroom, 2, true, global.ROW*50, global.COL*50, global.mune_width, global.view_height,0, 0, global.mune_width, global.view_height, 8*50, 8*50, 10, 10, -1);
 room_set_view_enabled( global.gameroom,true);
 
 

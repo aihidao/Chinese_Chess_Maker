@@ -108,16 +108,20 @@ if(global.draw_type&lt;100){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-global.c_col=(window_view_mouse_get_y(1)-window_view_mouse_get_y(1)%50)/50;
-global.c_row=(window_view_mouse_get_x(1)-window_view_mouse_get_x(1)%50)/50;
-switch(global.draw_type){
-    case 20:scp_draw_water();break;
-    case 21:scp_draw_land();break;
-    case 22:scp_draw_left_court();break;
-    case 23:scp_draw_right_court();break;
-    default:scp_draw_pieces();
+            <string>global.my_x = display_mouse_get_x(); 
+global.my_y = display_mouse_get_y(); 
+if(global.my_x&gt;global.mune_width){
+    global.c_col=(window_view_mouse_get_y(1)-window_view_mouse_get_y(1)%50)/50;
+    global.c_row=(window_view_mouse_get_x(1)-window_view_mouse_get_x(1)%50)/50;
+    switch(global.draw_type){
+        case 20:scp_draw_water();break;
+        case 21:scp_draw_land();break;
+        case 22:scp_draw_left_court();break;
+        case 23:scp_draw_right_court();break;
+        default:scp_draw_pieces();
+    }
 }
+
 
 
 
