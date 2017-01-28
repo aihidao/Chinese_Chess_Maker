@@ -3,7 +3,7 @@
   <spriteName>spr_ME_land</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-301</depth>
   <persistent>0</persistent>
   <parentName>obj_ME_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>

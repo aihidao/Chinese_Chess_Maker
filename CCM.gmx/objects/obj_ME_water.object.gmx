@@ -3,7 +3,7 @@
   <spriteName>spr_ME_water</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-290</depth>
   <persistent>0</persistent>
   <parentName>obj_ME_button</parentName>
   <maskName>&lt;undefined&gt;</maskName>

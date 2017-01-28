@@ -8,6 +8,13 @@ global.select_id=0;
 global.select=0;
 global.remove_piece=0;
 
+
+
+global.SOUNTH=0;
+global.WEST=1;
+global.NORTH=2;
+global.EAST=3;
+
 global.P_TOOL=8;
 global.CHE=1;
 global.BING=11;

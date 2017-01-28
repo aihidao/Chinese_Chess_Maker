@@ -8,7 +8,7 @@
   <parentName>obj_piece</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="6" enumb="8">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,12 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///para
-image_speed=0;
-img_ind=global.pieces[x/50,y/50]/100;
-image_index=img_ind;
+            <string>///eat
 
-
+if(global.place_promit[x/50,y/50]==2&amp;&amp;image_index!=global.select.image_index){
+     global.pieces[global.select.x/50,global.select.y/50]=0;
+     global.pieces[x/50,y/50]=global.select_type;
+     global.select.x=x;
+     global.select.y=y;
+     global.select_type=0;
+     global.select=-1;    
+     instance_destroy();
+}
+with(obj_pp){
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
