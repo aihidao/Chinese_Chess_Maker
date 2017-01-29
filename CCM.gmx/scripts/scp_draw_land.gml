@@ -1,4 +1,4 @@
-if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<global.ROW){
+                                                              if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<global.ROW){
        global.c_col=((window_view_mouse_get_y(1)-25)-(window_view_mouse_get_y(1)-25)%50)/50;
        global.c_row=((window_view_mouse_get_x(1)-25)-(window_view_mouse_get_x(1)-25)%50)/50;
        if(global.c_col>=0&&global.c_col<global.COL-1&&global.c_row>=0&&global.c_row<global.ROW-1){
@@ -20,6 +20,8 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
                 map_value-=3;
             }
             if(map_value>=2){
+                global.board[global.c_row,global.c_col+1]=1;
+                global.board[global.c_row,global.c_col]=1;
                  global.game_map[global.c_row,global.c_col+1]-=1;
             }else if(map_value>=1){
             
@@ -44,6 +46,9 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
             }
             if(map_value>=6){
                 global.game_map[global.c_row,global.c_col]-=3;
+                global.board[global.c_row,global.c_col]=1;
+                global.board[global.c_row,global.c_col+1]=1;
+                global.board[global.c_row+1,global.c_col]=1;
             }else if(map_value>=3){
             
             }else if(map_value<=2){
@@ -61,6 +66,8 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
             }
             if(map_value>=18){
                 global.game_map[global.c_row+1,global.c_col]-=9;
+                global.board[global.c_row+1,global.c_col]=1;
+                global.board[global.c_row,global.c_col]=1;
             }else if(map_value>=9){
             
             }else if(map_value<=8){
@@ -73,6 +80,9 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
             map_value=global.game_map[global.c_row+1,global.c_col+1];
             if(map_value>=54){
                 global.game_map[global.c_row+1,global.c_col+1]-=27;
+                global.board[global.c_row+1,global.c_col+1]=1;
+                global.board[global.c_row+1,global.c_col]=1;
+                global.board[global.c_row,global.c_col+1]=1;
             }else if(map_value>=27){
             
             }else if(map_value<=26){

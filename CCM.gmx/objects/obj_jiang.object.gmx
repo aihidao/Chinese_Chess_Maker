@@ -8,42 +8,6 @@
   <parentName>obj_piece</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="6" enumb="8">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///eat
-
-if(global.place_promit[x/50,y/50]==2&amp;&amp;image_index!=global.select.image_index){
-     global.pieces[global.select.x/50,global.select.y/50]=0;
-     global.pieces[x/50,y/50]=global.select_type;
-     global.select.x=x;
-     global.select.y=y;
-     global.select_type=0;
-     global.select=-1;    
-     instance_destroy();
-}
-with(obj_pp){
-    instance_destroy();
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
@@ -85,7 +49,102 @@ with(obj_pp){
     }
     
     //走起规则判断代码
+    //一步
+    if(p_x&gt;0){
+        temp_x=p_x-1;
+        temp_y=p_y;
+        if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]==0){
+            instance_create(temp_x*50,temp_y*50, obj_pp);
+            global.place_promit[temp_x,temp_y]=1;
+        }else if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+            global.place_promit[temp_x,temp_y]=2;
+        }
+    }
+    if(p_y&gt;0){
+        temp_x=p_x;
+        temp_y=p_y-1;
+        if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]==0){
+            instance_create(temp_x*50,temp_y*50, obj_pp);
+            global.place_promit[temp_x,temp_y]=1;
+        }else if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+            global.place_promit[temp_x,temp_y]=2;
+        }
+    }
+    if(p_x&lt;global.ROW-1){
+        temp_x=p_x+1;
+        temp_y=p_y;
+        if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]==0){
+            instance_create(temp_x*50,temp_y*50, obj_pp);
+            global.place_promit[temp_x,temp_y]=1;
+        }else if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+            global.place_promit[temp_x,temp_y]=2;
+        }
+    }
+    if(p_y&lt;global.COL-1){
+        temp_x=p_x;
+        temp_y=p_y+1;
+        if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]==0){
+            instance_create(temp_x*50,temp_y*50, obj_pp);
+            global.place_promit[temp_x,temp_y]=1;
+        }else if(global.board[temp_x,temp_y]==2&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+            global.place_promit[temp_x,temp_y]=2;
+        }
+    }
     
+    
+    //敌袭打ち取ったり
+    if(p_x&gt;0){
+        for(i=p_x-1;i&gt;=0;i--){
+            temp_x=i;
+            temp_y=p_y;
+            if(global.pieces[temp_x,temp_y]!=0){
+                if(global.pieces[temp_x,temp_y]%100==global.JIANG||global.pieces[temp_x,temp_y]%100==global.SHUAI){
+                    global.place_promit[temp_x,temp_y]=2;
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+    if(p_x&lt;global.ROW-1){
+        for(i=p_x+1;i&lt;global.ROW;i++){
+            temp_x=i;
+            temp_y=p_y;
+            if(global.pieces[temp_x,temp_y]!=0){
+                if(global.pieces[temp_x,temp_y]%100==global.JIANG||global.pieces[temp_x,temp_y]%100==global.SHUAI){
+                    global.place_promit[temp_x,temp_y]=2;
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+    if(p_y&gt;0){
+        for(j=p_y-1;j&gt;=0;j--){
+            temp_x=p_x;
+            temp_y=j;
+            if(global.pieces[temp_x,temp_y]!=0){
+                if(global.pieces[temp_x,temp_y]%100==global.JIANG||global.pieces[temp_x,temp_y]%100==global.SHUAI){
+                    global.place_promit[temp_x,temp_y]=2;
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+    if(p_y&lt;global.COL-1){
+        for(j=p_y+1;j&lt;global.COL;j++){
+            temp_x=p_x;
+            temp_y=j;
+            if(global.pieces[temp_x,temp_y]!=0){
+                if(global.pieces[temp_x,temp_y]%100==global.JIANG||global.pieces[temp_x,temp_y]%100==global.SHUAI){
+                    global.place_promit[temp_x,temp_y]=2;
+                }else{
+                    break;
+                }
+            }
+        }
+    }
 }else{
     instance_destroy();
        with(obj_pp){
