@@ -35,10 +35,12 @@ for(i=0;i<global.ROW;i++){
                 global.board[i,j-1]=2;
                 global.board[i-1,j]=2;
             }
+            
+            if(global.board[i,j]!=2&&global.board[i,j]!=0){
+                global.board[i,j]=1;
+            } 
         }
-        if(global.board[i,j]!=2&&global.board[i,j]!=0){
-            global.board[i,j]=1;
-        } 
+        
     }
 }
 //---

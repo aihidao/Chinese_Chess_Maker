@@ -24,6 +24,9 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
             }else if(map_value>=1){
             
             }else if(map_value<=0){
+                if(global.game_map[global.c_row,global.c_col+1]==0){
+                    global.board[global.c_row,global.c_col+1]=1;
+                }
                 global.game_map[global.c_row,global.c_col+1]+=1;
             }
             
@@ -44,6 +47,9 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
             }else if(map_value>=3){
             
             }else if(map_value<=2){
+                if(global.game_map[global.c_row,global.c_col]==0){
+                    global.board[global.c_row,global.c_col]=1;
+                }
                 global.game_map[global.c_row,global.c_col]+=3;
             }
             
@@ -58,6 +64,9 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
             }else if(map_value>=9){
             
             }else if(map_value<=8){
+                if(global.game_map[global.c_row+1,global.c_col]==0){
+                    global.board[global.c_row+1,global.c_col]=1;
+                }
                 global.game_map[global.c_row+1,global.c_col]+=9;
             }
             
@@ -67,6 +76,9 @@ if(0<=global.c_col&&global.c_col<global.COL&&0<=global.c_row&&global.c_row<globa
             }else if(map_value>=27){
             
             }else if(map_value<=26){
+                if(global.game_map[global.c_row+1,global.c_col+1]==0){
+                    global.board[global.c_row+1,global.c_col+1]=1;
+                }
                 global.game_map[global.c_row+1,global.c_col+1]+=27;
             }
        }
