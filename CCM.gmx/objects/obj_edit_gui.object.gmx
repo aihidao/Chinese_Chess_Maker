@@ -154,6 +154,7 @@ if(global.draw_type&gt;=0&amp;&amp;global.draw_type&lt;=2){
     scp_draw_map();
 }
 */
+
 scp_draw_map();
 global.pieces_number=instance_number(obj_piece);
 with(obj_ME_piece){

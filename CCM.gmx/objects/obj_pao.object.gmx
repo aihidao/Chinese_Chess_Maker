@@ -85,6 +85,122 @@ with(obj_pp){
     }
     
     //走起规则判断代码
+    temp_x=p_x+1;
+    temp_y=p_y;
+    jump=0;
+    while(temp_x&gt;=0&amp;&amp;temp_x&lt;global.ROW&amp;&amp;temp_y&gt;=0&amp;&amp;temp_y&lt;global.COL){
+        if(jump=0){
+            if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+                instance_create(temp_x*50, temp_y*50, obj_pp);
+                global.place_promit[temp_x,temp_y]=1;
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                jump=1;
+            }
+        }else{
+             if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+             
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                global.place_promit[temp_x,temp_y]=2;
+                break;
+            }
+        }
+        temp_x=temp_x+1;
+        temp_y=temp_y;
+    }
+    
+    temp_x=p_x;
+    temp_y=p_y+1;
+    jump=0;
+    while(temp_x&gt;=0&amp;&amp;temp_x&lt;global.ROW&amp;&amp;temp_y&gt;=0&amp;&amp;temp_y&lt;global.COL){
+        if(jump=0){
+            if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+                instance_create(temp_x*50, temp_y*50, obj_pp);
+                global.place_promit[temp_x,temp_y]=1;
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                jump=1;
+            }
+        }else{
+             if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+             
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                global.place_promit[temp_x,temp_y]=2;
+                break;
+            }
+        }
+        temp_x=temp_x;
+        temp_y=temp_y+1;
+    }
+    
+    temp_x=p_x-1;
+    temp_y=p_y;
+    jump=0;
+    while(temp_x&gt;=0&amp;&amp;temp_x&lt;global.ROW&amp;&amp;temp_y&gt;=0&amp;&amp;temp_y&lt;global.COL){
+        if(jump=0){
+            if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+                instance_create(temp_x*50, temp_y*50, obj_pp);
+                global.place_promit[temp_x,temp_y]=1;
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                jump=1;
+            }
+        }else{
+             if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+             
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                global.place_promit[temp_x,temp_y]=2;
+                break;
+            }
+        }
+        temp_x=temp_x-1;
+        temp_y=temp_y;
+    }
+    
+    temp_x=p_x;
+    temp_y=p_y-1;
+    jump=0;
+    while(temp_x&gt;=0&amp;&amp;temp_x&lt;global.ROW&amp;&amp;temp_y&gt;=0&amp;&amp;temp_y&lt;global.COL){
+        if(jump=0){
+            if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+                instance_create(temp_x*50, temp_y*50, obj_pp);
+                global.place_promit[temp_x,temp_y]=1;
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                jump=1;
+            }
+        }else{
+             if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]!=0){
+             
+            }else if(global.pieces[temp_x,temp_y]==0&amp;&amp;global.board[temp_x,temp_y]==0){
+                //是否可以过河
+                //break;
+            }else if(global.pieces[temp_x,temp_y]!=0){
+                global.place_promit[temp_x,temp_y]=2;
+                break;
+            }
+        }
+        temp_x=temp_x;
+        temp_y=temp_y-1;
+    }
+    
     
 }else{
     instance_destroy();

@@ -2,8 +2,19 @@ spr_cont();
 global.map_name=get_string("请输入地图名称","NewMap");
 global.ROW=get_integer("请输入棋盘宽度",9);
 global.COL=get_integer("请输入棋盘高度",10);
-global.player_number=get_integer("请输入玩家人数",2);
-
+while(global.player_number<2&&global.player_number>8){
+    global.player_number=get_integer("请输入玩家人数(2~8)",2);
+}
+for(i=0;i<global.player_number;i++){
+    global.player_side[i]=i%4;
+    for(j=0;j<=8;j++){
+        if(i==j){
+            global.player[i,j]=1;
+        }else{
+            global.player[i,j]=0;
+        }
+    }
+}
 
 global.gameroom=room_add();
 room_set_width(global.gameroom,global.ROW*50);
@@ -73,9 +84,17 @@ room_instance_add(global.gameroom,50,50,obj_ME_mumu);
 room_instance_add(global.gameroom,50,50,obj_ME_zu);
 room_instance_add(global.gameroom,50,50,obj_ME_clear);
 //---
+
+//===
+
 global.ti=(global.mune_width-global.mune_width%50)/50;
 global.tj=15;
 global.tw=(global.mune_width%50)/(global.ti+1);
 
 
 room_goto(global.gameroom);
+global.temp_i=0;
+for(i=0;i<=8;++i){
+    room_instance_add(global.gameroom,global.ROW*50+i*20,global.COL*50+8*50,obj_unit_color);
+   
+}

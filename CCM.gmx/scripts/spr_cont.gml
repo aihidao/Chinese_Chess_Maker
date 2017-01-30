@@ -1,5 +1,5 @@
 global.draw_type=0;
-global.mune_width=150;
+global.mune_width=200;
 global.screen_move_speed=10;
 global.place_player=1;
 global.chess_player=1;
@@ -8,14 +8,14 @@ global.select_id=0;
 global.select=0;
 global.remove_piece=0;
 
-
+global.player_number=9;
 
 global.SOUNTH=0;
 global.WEST=1;
 global.NORTH=2;
 global.EAST=3;
 
-global.P_TOOL=8;
+global.P_TOOL=(global.mune_width/50)*3-1;
 global.CHE=1;
 global.BING=11;
 global.JIANG=7;

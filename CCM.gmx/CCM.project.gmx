@@ -32,6 +32,8 @@
       <sprite>sprites\spr_ME_9land</sprite>
       <sprite>sprites\spr_ME_9sea</sprite>
       <sprite>sprites\spr_ME_9court</sprite>
+      <sprite>sprites\spr_unit_color</sprite>
+      <sprite>sprites\spr_tick</sprite>
     </sprites>
     <sprites name="backWorker">
       <sprite>sprites\spr_aim</sprite>
@@ -100,6 +102,8 @@
         <object>objects\obj_ME_mumu</object>
         <object>objects\obj_ME_zu</object>
         <object>objects\obj_ME_clear</object>
+        <object>objects\obj_unit_color</object>
+        <object>objects\obj_tick</object>
       </objects>
       <object>objects\obj_piece</object>
       <object>objects\obj_ME_piece</object>
