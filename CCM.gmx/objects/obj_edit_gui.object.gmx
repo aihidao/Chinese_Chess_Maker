@@ -118,6 +118,7 @@ if(global.my_x&gt;global.mune_width){
         case 21:scp_draw_land();break;
         case 22:scp_draw_left_court();break;
         case 23:scp_draw_right_court();break;
+        case 24:scp_draw_county();break;
         default:scp_draw_pieces();
     }
 }

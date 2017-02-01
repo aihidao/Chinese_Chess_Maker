@@ -36,8 +36,7 @@
       <sprite>sprites\spr_tick</sprite>
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_side</sprite>
-      <sprite>sprites\spr_d_couty</sprite>
-      <sprite>sprites\spr_couty</sprite>
+      <sprite>sprites\spr_d_county</sprite>
     </sprites>
     <sprites name="backWorker">
       <sprite>sprites\spr_aim</sprite>
@@ -45,6 +44,8 @@
       <sprite>sprites\spr_pp</sprite>
     </sprites>
     <sprite>sprites\spr_revolution</sprite>
+    <sprite>sprites\spri_ME_county</sprite>
+    <sprite>sprites\spr_county</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -64,6 +65,7 @@
         <script>scripts\scp_draw_left_court.gml</script>
         <script>scripts\scp_draw_right_court.gml</script>
         <script>scripts\scp_draw_pieces.gml</script>
+        <script>scripts\scp_draw_county.gml</script>
       </scripts>
       <script>scripts\spr_cont.gml</script>
     </scripts>
@@ -82,7 +84,8 @@
       <object>objects\obj_unit_color</object>
       <object>objects\obj_tick</object>
       <object>objects\obj_side</object>
-      <object>objects\obj_courty</object>
+      <object>objects\obj_ME_county</object>
+      <object>objects\obj_county</object>
     </objects>
     <objects name="pieces">
       <objects name="pieces">

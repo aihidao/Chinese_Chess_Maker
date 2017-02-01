@@ -95,7 +95,7 @@ room_instance_add(global.gameroom,0,0,obj_ME_water);
 room_instance_add(global.gameroom,0,0,obj_ME_land);
 room_instance_add(global.gameroom,0,0,obj_ME_right);
 room_instance_add(global.gameroom,0,0,obj_ME_left);
-room_instance_add(global.gameroom,0,0,obj_courty);
+room_instance_add(global.gameroom,0,0,obj_ME_county);
 //----
 room_instance_add(global.gameroom,50,50,obj_ME_che);
 room_instance_add(global.gameroom,50,50,obj_ME_bing);

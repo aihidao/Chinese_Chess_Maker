@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>if(global.select!=0){
     global.pieces[global.select.x/50,global.select.y/50]=0;
+    if(global.select_type%100==global.BING){
+        global.select.step++;
+     }
     global.select.x=x;
     global.select.y=y;
     global.pieces[x/50,y/50]=global.select_type;
