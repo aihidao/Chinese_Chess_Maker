@@ -37,6 +37,8 @@
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_side</sprite>
       <sprite>sprites\spr_d_county</sprite>
+      <sprite>sprites\spr_ME_save</sprite>
+      <sprite>sprites\spr_exit</sprite>
     </sprites>
     <sprites name="backWorker">
       <sprite>sprites\spr_aim</sprite>
@@ -68,6 +70,7 @@
         <script>scripts\scp_draw_county.gml</script>
       </scripts>
       <script>scripts\spr_cont.gml</script>
+      <script>scripts\scp_save_map.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -86,6 +89,8 @@
       <object>objects\obj_side</object>
       <object>objects\obj_ME_county</object>
       <object>objects\obj_county</object>
+      <object>objects\obj_ME_save</object>
+      <object>objects\obj_exit</object>
     </objects>
     <objects name="pieces">
       <objects name="pieces">

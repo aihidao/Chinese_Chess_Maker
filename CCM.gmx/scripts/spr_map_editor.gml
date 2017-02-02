@@ -34,11 +34,11 @@ for(i=0;i<global.player_number;i++){
     }
 }
 for(i=0;i<8;++i){
-    global.player_side[i]=i%4;
     global.temp_s=0;
     room_instance_add(global.gameroom,global.ROW*50+(i+1)*20,global.COL*50+(global.player_number+1)*20+7*50,obj_side);
     instance_activate_object(obj_side);
 }
+
 /*
 global.temp_i=0;
 for(i=0;i<=8;++i){
@@ -109,6 +109,8 @@ room_instance_add(global.gameroom,50,50,obj_ME_xiang);
 room_instance_add(global.gameroom,50,50,obj_ME_mumu);
 room_instance_add(global.gameroom,50,50,obj_ME_zu);
 room_instance_add(global.gameroom,50,50,obj_ME_clear);
+room_instance_add(global.gameroom,global.ROW*50,global.COL*50+global.window_height-50,obj_ME_save);
+room_instance_add(global.gameroom,global.ROW*50+100,global.COL*50+global.window_height-50,obj_exit);
 //---
 
 //===

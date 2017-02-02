@@ -8,6 +8,195 @@
   <parentName>obj_piece</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>east</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>west</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>south</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>north</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>611</id>
+        <kind>6</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>step</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>2</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_speed=0;
+img_ind=(global.pieces[x/50,y/50]-global.pieces[x/50,y/50]%100)/100;
+image_index=img_ind;
+
+step=2;
+east=0;
+west=0;
+south=0;
+north=0;
+
+color=(global.pieces[x/50,y/50]-global.pieces[x/50,y/50]%100)/100;
+first_side=(global.player_side[color-1]+2)%4;
+p_number=-1;
+//全面战场
+for(i=0;i&lt;global.player_number;i++){
+    for(j=0;j&lt;8;j++){
+      if(global.player[i,j]=1&amp;&amp;j==(color-1)){
+        p_number=i;
+      }
+    }
+}
+for(i=0;i&lt;global.player_number;i++){
+    for(j=0;j&lt;8;j++){
+      if(global.player[i,j]=1&amp;&amp;i!=p_number){
+        switch(global.player_side[j]){
+            case 0:south=2;west=2;east=2;break;
+            case 1:north=2;south=2;west=2;break;
+            case 2:north=2;west=2;east=2;break;
+            case 3:north=2;south=2;east=2;break;
+        }
+      }
+    }
+}
+//冲刺进攻方向
+
+switch(first_side){
+    case 0:south=1;break;
+    case 1:west=1;break;
+    case 2:north=1;break;
+    case 3:east=1;break;
+}
+for(i=0;i&lt;instance_number(obj_county);++i){
+    temp=instance_find(obj_county, i);
+    if(temp.x==x&amp;&amp;temp.y==y){
+        step=0;    
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
@@ -49,7 +238,114 @@
     }
     
     //走起规则判断代码
-    
+    if(step&lt;2){
+        if(south=1){
+            if(p_y&lt;global.COL-1){
+                temp_x=p_x;
+                temp_y=p_y+1;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        
+        if(west=1){
+                if(p_x&gt;0){
+                temp_x=p_x-1;
+                temp_y=p_y;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                    
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        
+        if(north=1){
+            if(p_y&gt;0){
+                temp_x=p_x;
+                temp_y=p_y-1;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        
+        if(east=1){
+            if(p_x&lt;global.ROW-1){
+                temp_x=p_x+1;
+                temp_y=p_y;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        global.look_s=step;
+    }else{  //`````````````````````````````````````````````
+        if(south&gt;=1){
+            if(p_y&lt;global.COL-1){
+                temp_x=p_x;
+                temp_y=p_y+1;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        
+        if(west&gt;=1){
+                if(p_x&gt;0){
+                temp_x=p_x-1;
+                temp_y=p_y;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        
+        if(north&gt;=1){
+            if(p_y&gt;0){
+                temp_x=p_x;
+                temp_y=p_y-1;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        
+        if(east&gt;=1){
+            if(p_x&lt;global.ROW-1){
+                temp_x=p_x+1;
+                temp_y=p_y;
+                if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]==0){
+                    instance_create(temp_x*50,temp_y*50, obj_pp);
+                    global.place_promit[temp_x,temp_y]=1;
+                }else if(global.board[temp_x,temp_y]&gt;=1&amp;&amp;global.pieces[temp_x,temp_y]!=0){
+                    global.place_promit[temp_x,temp_y]=2;
+                }
+            }
+        }
+        global.look_s=step;
+    }
 }else{
     instance_destroy();
        with(obj_pp){

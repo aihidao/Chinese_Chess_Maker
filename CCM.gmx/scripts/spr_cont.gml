@@ -10,6 +10,16 @@ global.remove_piece=0;
 
 global.player_number=9;
 
+global.player_side[0]=0;
+global.player_side[1]=2;
+global.player_side[2]=1;
+global.player_side[3]=3;
+global.player_side[4]=0;
+global.player_side[5]=1;
+global.player_side[6]=2;
+global.player_side[7]=3;
+global.player_side[8]=0;
+
 global.SOUNTH=0;
 global.WEST=1;
 global.NORTH=2;

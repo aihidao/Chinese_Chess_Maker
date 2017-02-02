@@ -451,12 +451,12 @@
     <option_use_new_audio>True</option_use_new_audio>
     <option_variableerrors>False</option_variableerrors>
     <option_version>0.001</option_version>
-    <option_version_build>1</option_version_build>
+    <option_version_build>0</option_version_build>
     <option_version_company>Yuming</option_version_company>
     <option_version_copyright>WangYuming</option_version_copyright>
     <option_version_description>该游戏为本人在贵阳学院毕业设计。</option_version_description>
     <option_version_major>0</option_version_major>
-    <option_version_minor>1</option_version_minor>
+    <option_version_minor>2</option_version_minor>
     <option_version_product>Yuming</option_version_product>
     <option_version_release>1</option_version_release>
     <option_win8_advertising_appid></option_win8_advertising_appid>
@@ -527,7 +527,7 @@
     <option_winUAP_wide_logo>Configs\Default\WindowsUAP\logos\WideLogo.scale-100.png</option_winUAP_wide_logo>
     <option_windowcolor>clBlack</option_windowcolor>
     <option_windows_alternate_sync_method>False</option_windows_alternate_sync_method>
-    <option_windows_build_version>1</option_windows_build_version>
+    <option_windows_build_version>0</option_windows_build_version>
     <option_windows_company_info>Yuming</option_windows_company_info>
     <option_windows_copyright_info>WangYuming</option_windows_copyright_info>
     <option_windows_create_textures_on_demand>False</option_windows_create_textures_on_demand>
@@ -535,7 +535,7 @@
     <option_windows_enable_steam>0</option_windows_enable_steam>
     <option_windows_game_icon>Configs\Default\windows\runner_icon.ico</option_windows_game_icon>
     <option_windows_license>Configs\Default\windows\License.txt</option_windows_license>
-    <option_windows_mainor_version>1</option_windows_mainor_version>
+    <option_windows_mainor_version>2</option_windows_mainor_version>
     <option_windows_major_version>0</option_windows_major_version>
     <option_windows_nsis_file>Configs\Default\windows\RunnerInstaller.nsi</option_windows_nsis_file>
     <option_windows_product_info>Yuming</option_windows_product_info>
