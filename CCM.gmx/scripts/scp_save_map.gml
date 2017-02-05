@@ -66,7 +66,7 @@ ds_map_add_list(global.game_info, "side_info", global.side_info);
 
 global.game_json=json_encode(global.game_info);
 
-var game_file= file_text_open_write(working_directory+"/gamemap/"+global.map_name+".json");
+var game_file= file_text_open_write(working_directory+"/gamemap/"+global.map_name+".cmap");
 file_text_write_string(game_file, global.game_json);
 file_text_close(game_file);
 

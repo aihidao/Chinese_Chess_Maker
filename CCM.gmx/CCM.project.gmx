@@ -6,7 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_edit_map</sprite>
     <sprites name="pieces">
       <sprite>sprites\spr_pieces</sprite>
       <sprites name="spr_nocolor">
@@ -39,15 +38,20 @@
       <sprite>sprites\spr_d_county</sprite>
       <sprite>sprites\spr_ME_save</sprite>
       <sprite>sprites\spr_exit</sprite>
+      <sprite>sprites\spri_ME_county</sprite>
     </sprites>
     <sprites name="backWorker">
       <sprite>sprites\spr_aim</sprite>
       <sprite>sprites\spr_bg</sprite>
       <sprite>sprites\spr_pp</sprite>
     </sprites>
-    <sprite>sprites\spr_revolution</sprite>
-    <sprite>sprites\spri_ME_county</sprite>
     <sprite>sprites\spr_county</sprite>
+    <sprite>sprites\sprite34</sprite>
+    <sprites name="Main_">
+      <sprite>sprites\spr_edit_map</sprite>
+      <sprite>sprites\spr_revolution</sprite>
+      <sprite>sprites\spr_load</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -130,6 +134,9 @@
       <object>objects\obj_edit_map</object>
       <object>objects\obj_pp</object>
       <object>objects\obj_revolution</object>
+    </objects>
+    <objects name="main">
+      <object>objects\obj_load</object>
     </objects>
   </objects>
   <rooms name="rooms">
