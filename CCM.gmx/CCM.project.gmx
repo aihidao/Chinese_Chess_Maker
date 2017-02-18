@@ -52,6 +52,9 @@
       <sprite>sprites\spr_revolution</sprite>
       <sprite>sprites\spr_load</sprite>
     </sprites>
+    <sprites name="textbox">
+      <sprite>sprites\spr_textinput</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -76,9 +79,15 @@
       <script>scripts\spr_cont.gml</script>
       <script>scripts\scp_save_map.gml</script>
     </scripts>
+    <scripts name="maiin">
+      <script>scripts\scp_main_cont.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Game_title</font>
+    <font>fonts\fot_chinese</font>
+    <font>fonts\fot_english</font>
+    <font>fonts\fot_number</font>
   </fonts>
   <objects name="objects">
     <objects name="map_editor">
@@ -137,6 +146,12 @@
     </objects>
     <objects name="main">
       <object>objects\obj_load</object>
+    </objects>
+    <objects name="text_input">
+      <object>objects\obj_input</object>
+      <object>objects\obj_chinese_input</object>
+      <object>objects\obj_number_input</object>
+      <object>objects\obj_english_input</object>
     </objects>
   </objects>
   <rooms name="rooms">

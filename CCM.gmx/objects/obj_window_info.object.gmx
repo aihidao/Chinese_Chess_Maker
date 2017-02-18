@@ -28,6 +28,7 @@
             <string>///draw gui
 //window_set_size(display_get_gui_width(),display_get_gui_height());
 //surface_resize(application_surface,display_get_gui_width(),display_get_gui_height());
+scp_main_cont();
 ini_open("game_setting.ini");
 if(ini_section_exists("screen_size")){
     global.window_width=ini_read_real("screen_size","screen_width",800);

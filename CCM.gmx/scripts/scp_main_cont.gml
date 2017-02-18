@@ -1,0 +1,5 @@
+global.CHINESE_INPUT=0;
+global.ENGLISH_INPUT=1;
+global.NUMBER_INPUT=2;
+global.PASSWORD_INPUT=3;
+
