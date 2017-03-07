@@ -28,6 +28,10 @@
             <string>stringbox="";
 be_select=0;
 image_speed=0;
+text_title='';
+default_value='';
+min_value=0;
+max_value=0;
 //draw_sprite(spr_textinput,0,x,y);
 //input_type=-1;
 </string>
@@ -134,7 +138,9 @@ if(be_select==0){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>stringbox=string_delete(stringbox,string_length(stringbox),1);
+            <string>if(be_select==1){
+    stringbox=string_delete(stringbox,string_length(stringbox),1);
+}
 </string>
           </argument>
         </arguments>

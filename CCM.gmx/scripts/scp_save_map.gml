@@ -1,9 +1,14 @@
 global.game_info=ds_map_create();
 
 //------------------------------------------
+ for(i=0;i<global.ROW;i++){
+        for(j=0;j<global.COL;j++){
+            global.county[i,j]=0;
+        }
+    }
 for(k=0;k<instance_number(obj_county);k++){
-    for(i=0;i<global.ROW-1;i++){
-        for(j=0;j<global.COL-1;j++){
+    for(i=0;i<global.ROW;i++){
+        for(j=0;j<global.COL;j++){
         
             temp=instance_find(obj_county,k);
             if(temp.x==i*50&&temp.y*50==j*50){
@@ -14,11 +19,8 @@ for(k=0;k<instance_number(obj_county);k++){
         }
     }
 }
- for(i=0;i<global.ROW-1;i++){
-        for(j=0;j<global.COL-1;j++){
-            global.county[i,j]=0;
-        }
-    }
+
+
     
 for(k=0;k<instance_number(obj_county);k++){
      temp=instance_find(obj_county,k);
@@ -34,8 +36,8 @@ global.county_info=ds_list_create();
 global.side_info=ds_list_create();
 global.player_info=ds_list_create();
 
-for(i=0;i<global.ROW-1;i++){
-    for(j=0;j<global.COL-1;j++){
+for(i=0;i<global.ROW;i++){
+    for(j=0;j<global.COL;j++){
         ds_list_add(global.map_info, global.game_map[i,j]);
         ds_list_add(global.pieces_info,global.pieces[i,j]);
         ds_list_add(global.board_info,global.board[i,j]);

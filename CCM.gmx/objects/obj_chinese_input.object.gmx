@@ -8,6 +8,38 @@
   <parentName>obj_input</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="6" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>for(i=0;i&lt;instance_number(obj_input);i++){
+    temp_input=instance_find(obj_input,i);
+    temp_input.be_select=0;
+    temp_input.image_index=0;
+}
+
+if(be_select==0){
+    be_select=1;
+    image_index=2;
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -36,7 +68,9 @@ if(be_select==1){
         case 1:draw_sprite(spr_textinput,1,x,y);
     }
 }
+draw_set_color(c_black);
 draw_set_font(fot_chinese);
+draw_text(x-40,y+5,text_title);
 draw_text(x+15,y+5,stringbox);
 </string>
           </argument>

@@ -55,6 +55,9 @@
     <sprites name="textbox">
       <sprite>sprites\spr_textinput</sprite>
     </sprites>
+    <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_gamer</sprite>
+    <sprite>sprites\spr_ready</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -81,6 +84,10 @@
     </scripts>
     <scripts name="maiin">
       <script>scripts\scp_main_cont.gml</script>
+    </scripts>
+    <scripts name="gameing">
+      <script>scripts\spr_gaming.gml</script>
+      <script>scripts\scp_host.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -145,13 +152,18 @@
       <object>objects\obj_revolution</object>
     </objects>
     <objects name="main">
-      <object>objects\obj_load</object>
+      <object>objects\obj_create_room</object>
     </objects>
     <objects name="text_input">
       <object>objects\obj_input</object>
       <object>objects\obj_chinese_input</object>
       <object>objects\obj_number_input</object>
       <object>objects\obj_english_input</object>
+      <object>objects\obj_button</object>
+    </objects>
+    <objects name="game">
+      <object>objects\obj_gamer</object>
+      <object>objects\obj_ready</object>
     </objects>
   </objects>
   <rooms name="rooms">

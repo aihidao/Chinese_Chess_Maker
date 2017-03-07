@@ -25,13 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if directory_exists(working_directory+"/gamemap/")
-   {
-   global.file = file_find_first(working_directory+"/gamemap/", fa_readonly);
-   }
-
-
-
+            <string>spr_gaming();
 </string>
           </argument>
         </arguments>
