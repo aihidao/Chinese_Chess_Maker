@@ -38,3 +38,7 @@ global.XIANG=3;
 global.MUMU=4;
 global.ZU=10;
 global.CLEAR=12;
+
+//-------------------------player status------------------
+global.player_status=0;
+global.mine=-1;//overwatch

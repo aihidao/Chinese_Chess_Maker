@@ -85,11 +85,13 @@ for(i=0;i<global.ROW;i++){
         draw_sprite_part(spr_bg,-1,(global.game_map[i,j]%9)*50, int64( (global.game_map[i,j]/9))*50, 50, 50,i*50,j*50);
     }
 }
+global.gamer_id=0;
 for(i=0;i<global.player_number;++i){
     //玩家状态
     global.gamer[i]=room_instance_add(global.gamingroom,global.ROW*50,global.COL*50+i*75,obj_gamer);
 }
 room_instance_add(global.gamingroom,200,200,obj_ready);
+room_instance_add(global.gamingroom,200,400,obj_cancel);
 room_goto(global.gamingroom);
 
 

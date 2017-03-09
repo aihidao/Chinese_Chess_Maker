@@ -58,6 +58,7 @@
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_gamer</sprite>
     <sprite>sprites\spr_ready</sprite>
+    <sprite>sprites\spr_cancel</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -84,10 +85,13 @@
     </scripts>
     <scripts name="maiin">
       <script>scripts\scp_main_cont.gml</script>
+      <script>scripts\scp_my_net_status.gml</script>
     </scripts>
     <scripts name="gameing">
       <script>scripts\spr_gaming.gml</script>
       <script>scripts\scp_host.gml</script>
+      <script>scripts\spr_gamer_status.gml</script>
+      <script>scripts\spr_net.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -164,6 +168,7 @@
     <objects name="game">
       <object>objects\obj_gamer</object>
       <object>objects\obj_ready</object>
+      <object>objects\obj_cancel</object>
     </objects>
   </objects>
   <rooms name="rooms">

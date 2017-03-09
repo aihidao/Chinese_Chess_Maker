@@ -1,3 +1,3 @@
-with(global.gamer[0]){
-    image_index=1;
-}
+global.gamer[0]=1;
+global.player_status=1;
+global.mine=0;
