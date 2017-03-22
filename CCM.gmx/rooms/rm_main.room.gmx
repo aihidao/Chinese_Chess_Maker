@@ -56,6 +56,7 @@
     <instance objName="obj_revolution" x="192" y="416" name="inst_7E96E7C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_create_room" x="320" y="416" name="inst_94D76DC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_chinese_input" x="32" y="256" name="inst_D1C2135A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_join_game" x="480" y="416" name="inst_20695DC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

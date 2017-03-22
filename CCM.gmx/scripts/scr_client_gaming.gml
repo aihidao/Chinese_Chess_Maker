@@ -1,9 +1,9 @@
-
 spr_cont();
-//加载游戏数据
-global.map_name='四国争';
-fileid = file_text_open_read(working_directory+"/gamemap/"+global.map_name+".cmap");
-global.game_json=file_text_read_string(fileid);
+var buffer = argument[0];
+
+global.mine=buffer_read(buffer,buffer_u8);
+global.game_json=buffer_read(buffer,buffer_string);
+
 global.game_info=json_decode(global.game_json);
 
 global.map_name=ds_map_find_value(global.game_info,"map_name");
@@ -18,6 +18,12 @@ global.player_info=ds_map_find_value(global.game_info, "player_info");
 global.side_info=ds_map_find_value(global.game_info, "side_info");
 
 
+for(i=0;i<global.player_number;i++){
+    global.player_status[i]=0;
+}
+global.player_status[global.mine]=1;
+
+
 //----------------------------------------------------------房间设定
 global.gamingroom=room_add();
 room_set_width(global.gamingroom,global.ROW*50);
@@ -25,8 +31,6 @@ room_set_height(global.gamingroom,global.COL*50);
 room_set_persistent(global.gamingroom,false);
 room_set_background_colour(global.gamingroom, c_purple, true);
 //--------------------------------------------------------位置信息放置
-
-
 for(i=0;i<global.ROW;i++){
     for(j=0;j<global.COL;j++){
         global.game_map[i,j]=ds_list_find_value(global.map_info,i*global.COL+j);
@@ -92,13 +96,16 @@ for(i=0;i<global.player_number;++i){
     //玩家状态
     global.gamer[i]=room_instance_add(global.gamingroom,global.ROW*50,global.COL*50+i*75,obj_gamer);
 }
-room_instance_add(global.gamingroom,400,400,obj_start);
-room_instance_add(global.gamingroom,200,400,obj_server);
+room_instance_add(global.gamingroom,200,200,obj_ready);
+room_instance_add(global.gamingroom,200,400,obj_client);
 //room_instance_add(global.gamingroom,200,400,obj_cancel);
 room_goto(global.gamingroom);
 
-
-
-
-
-
+var size = 1024;
+var type = buffer_fixed;
+var alignment = 1;
+buffer=buffer_create(size,type,alignment);
+    buffer_seek(buffer,buffer_seek_start,0);
+    buffer_write(buffer,buffer_u8,global.READYROOM);
+    network_send_packet(global.client_socket,buffer,buffer_tell(buffer));
+    buffer_delete(buffer);

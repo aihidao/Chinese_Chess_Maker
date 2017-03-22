@@ -1,3 +1,4 @@
+
 switch(global.player_status){
     case 0:image_index=0;break;//离线
     case 1:image_index=1;break;//进房

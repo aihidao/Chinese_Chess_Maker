@@ -59,6 +59,8 @@
     <sprite>sprites\spr_gamer</sprite>
     <sprite>sprites\spr_ready</sprite>
     <sprite>sprites\spr_cancel</sprite>
+    <sprite>sprites\spr_join</sprite>
+    <sprite>sprites\spr_start</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -89,9 +91,28 @@
     </scripts>
     <scripts name="gameing">
       <script>scripts\spr_gaming.gml</script>
-      <script>scripts\scp_host.gml</script>
-      <script>scripts\spr_gamer_status.gml</script>
-      <script>scripts\spr_net.gml</script>
+      <script>scripts\scp_net_server_create.gml</script>
+      <script>scripts\__spr_gamer_status.gml</script>
+      <script>scripts\scp_net_client.gml</script>
+    </scripts>
+    <scripts name="networking">
+      <scripts name="Main">
+        <script>scripts\scr_received_packet.gml</script>
+        <script>scripts\scr_gaming.gml</script>
+      </scripts>
+      <scripts name="Type">
+        <script>scripts\scr_new_player.gml</script>
+      </scripts>
+      <scripts name="Client_">
+        <script>scripts\scr_client_gaming.gml</script>
+        <script>scripts\scr_ready_info.gml</script>
+        <script>scripts\scr_ready.gml</script>
+        <script>scripts\scr_ready_cancel.gml</script>
+      </scripts>
+      <scripts name="server">
+        <script>scripts\scr_ready_room.gml</script>
+        <script>scripts\scr_game_start.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -157,6 +178,7 @@
     </objects>
     <objects name="main">
       <object>objects\obj_create_room</object>
+      <object>objects\obj_join_game</object>
     </objects>
     <objects name="text_input">
       <object>objects\obj_input</object>
@@ -169,6 +191,12 @@
       <object>objects\obj_gamer</object>
       <object>objects\obj_ready</object>
       <object>objects\obj_cancel</object>
+      <object>objects\obj_start</object>
+    </objects>
+    <objects name="network">
+      <object>objects\obj_server</object>
+      <object>objects\obj_client</object>
+      <object>objects\obj_o_s</object>
     </objects>
   </objects>
   <rooms name="rooms">
