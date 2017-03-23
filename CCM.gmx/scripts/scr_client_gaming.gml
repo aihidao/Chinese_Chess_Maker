@@ -50,6 +50,40 @@ for(i=0;i<8;++i){
     global.player_side[i]=ds_list_find_value(global.side_info,i);
 }
 
+NORTH=0;
+SOUNTH=0;
+EAST=0;
+WEST=0;
+for(i=0;i<8;i++){
+    if(global.player[global.mine,i]==1){
+        switch(global.player_side[i]){
+            case global.SOUNTH:SOUNTH++;break;
+            case global.WEST:WEST++;break;
+            case global.NORTH:NORTH++;break;
+            case global.EAST:EAST++;break;
+        }
+    }
+}
+temp=SOUNTH
+global.LOC_SIDE=global.SOUNTH;
+if(WEST>temp){
+    temp=WEST;
+    global.LOC_SIDE=global.WEST;
+}
+
+if(NORTH>temp){
+    temp=NORTH;
+    global.LOC_SIDE=global.NORTH;
+}
+
+if(EAST>temp){
+    temp=EAST;
+    global.LOC_SIDE=global.EAST;
+}
+global.tn=NORTH;
+global.ts=SOUNTH;
+global.tw=WEST;
+global.te=EAST;
 
 
 //目标文件，内含触发事件
@@ -80,8 +114,6 @@ room_set_view(global.gamingroom, 1, true, 0, 0, global.view_width, global.view_h
 room_set_view(global.gamingroom, 2, true, global.ROW*50, global.COL*50, global.mune_width, global.window_height,0, 0, global.mune_width, global.window_height, 8*50, 8*50, 10, 10, -1);
 room_set_view_enabled(global.gamingroom,true);
 
-
-
 //---------------------------------------------玩家状态栏-----------------------------------------------------------
 
 
@@ -100,6 +132,7 @@ room_instance_add(global.gamingroom,200,200,obj_ready);
 room_instance_add(global.gamingroom,200,400,obj_client);
 //room_instance_add(global.gamingroom,200,400,obj_cancel);
 room_goto(global.gamingroom);
+scr_change_view();
 
 var size = 1024;
 var type = buffer_fixed;

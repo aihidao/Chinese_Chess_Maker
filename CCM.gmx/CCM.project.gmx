@@ -21,6 +21,15 @@
         <sprite>sprites\spr_xiang</sprite>
         <sprite>sprites\spr_zu</sprite>
       </sprites>
+      <sprites name="wAST">
+        <sprite>sprites\spr_che_1</sprite>
+      </sprites>
+      <sprites name="NORTH">
+        <sprite>sprites\spr_che_2</sprite>
+      </sprites>
+      <sprites name="EAST">
+        <sprite>sprites\spr_che_3</sprite>
+      </sprites>
     </sprites>
     <sprites name="map_editor">
       <sprite>sprites\spr_ME_water</sprite>
@@ -94,6 +103,11 @@
       <script>scripts\scp_net_server_create.gml</script>
       <script>scripts\__spr_gamer_status.gml</script>
       <script>scripts\scp_net_client.gml</script>
+      <script>scripts\scr_change_view.gml</script>
+      <script>scripts\scr_view_sounth.gml</script>
+      <script>scripts\scr_view_north.gml</script>
+      <script>scripts\scr_view_east.gml</script>
+      <script>scripts\scr_view_west.gml</script>
     </scripts>
     <scripts name="networking">
       <scripts name="Main">

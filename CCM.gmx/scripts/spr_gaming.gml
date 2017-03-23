@@ -17,7 +17,6 @@ global.county_info=ds_map_find_value(global.game_info, "county_info");
 global.player_info=ds_map_find_value(global.game_info, "player_info");
 global.side_info=ds_map_find_value(global.game_info, "side_info");
 
-
 //----------------------------------------------------------房间设定
 global.gamingroom=room_add();
 room_set_width(global.gamingroom,global.ROW*50);
@@ -36,15 +35,52 @@ for(i=0;i<global.ROW;i++){
     }
 }
 
-for(i=0;i<global.player_number;++i){
+for(i=0;i<global.player_number;i++){
     for(j=0;j<8;j++){
-        global.player[i,j]=ds_list_find_value(global.player_info,i*global.player_number+j);
+        global.player[i,j]=ds_list_find_value(global.player_info,i*8+j);
     }
 }
 
-for(i=0;i<8;++i){
+for(i=0;i<8;i++){
     global.player_side[i]=ds_list_find_value(global.side_info,i);
 }
+
+NORTH=0;
+SOUNTH=0;
+EAST=0;
+WEST=0;
+global.mine=0;
+for(i=0;i<8;i++){
+    if(global.player[global.mine,i]==1){
+        switch(global.player_side[i]){
+            case global.SOUNTH:SOUNTH++;break;
+            case global.WEST:WEST++;break;
+            case global.NORTH:NORTH++;break;
+            case global.EAST:EAST++;break;
+        }
+    }
+}
+temp=SOUNTH
+global.LOC_SIDE=global.SOUNTH;
+if(WEST>temp){
+    temp=WEST;
+    global.LOC_SIDE=global.WEST;
+}
+
+if(NORTH>temp){
+    temp=NORTH;
+    global.LOC_SIDE=global.NORTH;
+}
+
+if(EAST>temp){
+    temp=EAST;
+    global.LOC_SIDE=global.EAST;
+}
+global.tn=NORTH;
+global.ts=SOUNTH;
+global.tw=WEST;
+global.te=EAST;
+
 
 
 
@@ -75,6 +111,7 @@ room_set_view(global.gamingroom, 0, true, global.ROW*50+global.mune_width,global
 room_set_view(global.gamingroom, 1, true, 0, 0, global.view_width, global.view_height,global.mune_width+global.margin_width, global.margin_height, global.view_width, global.view_height, 8*50, 8*50, 10, 10, obj_aim);
 room_set_view(global.gamingroom, 2, true, global.ROW*50, global.COL*50, global.mune_width, global.window_height,0, 0, global.mune_width, global.window_height, 8*50, 8*50, 10, 10, -1);
 room_set_view_enabled(global.gamingroom,true);
+//--------------------------------------------change view --------------------------------------------
 
 
 
@@ -96,6 +133,7 @@ room_instance_add(global.gamingroom,400,400,obj_start);
 room_instance_add(global.gamingroom,200,400,obj_server);
 //room_instance_add(global.gamingroom,200,400,obj_cancel);
 room_goto(global.gamingroom);
+scr_change_view();
 
 
 
