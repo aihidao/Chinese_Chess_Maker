@@ -1,0 +1,30 @@
+
+    status=ds_list_create();
+    next=-1;
+    for(i=0;i<global.player_number;i++){
+        if(global.player_status[i]==4){
+            next=(i+1)%global.player_number;
+            global.player_status[i]=3;
+            global.player_status[next]=4;
+            ds_list_add(status,global.player_status[i]);
+            if(next!=0){
+                ds_list_add(status,global.player_status[next]);
+            }else{
+                ds_list_replace(status,next,global.player_status[next]);
+            }
+            i=i+1;
+        }else{
+            ds_list_add(status,global.player_status[i]);
+        }
+    }
+    if(global.mine==0){
+        buff=buffer_create(1024,buffer_grow,1);
+        buffer_seek(buff,buffer_seek_start,0);
+        buffer_write(buff,buffer_u8,global.NEXT);
+        buffer_write(buff,buffer_string,ds_list_write(status));
+        for(i=0;i<ds_list_size(global.clients);i++){
+                client=ds_list_find_value(global.clients, i);
+                player_socket=ds_map_find_value(client,'player_socket');
+                network_send_packet(player_socket,buff,buffer_tell(buff));
+        }
+    }

@@ -55,6 +55,10 @@ global.PLAYERREADY=16;//玩家准备
 global.PLAYERCANCELREADY=17;//玩家准备取消
 global.PLAYEROUT=18;//玩家退出
 global.REFUSEENTER=19;//拒绝玩家进入
+
 global.GAMESTART=21;//游戏开始
+global.MOVE=22;//
+global.EAT=23;//吃
+global.NEXT=24;//服务器吃
 
 

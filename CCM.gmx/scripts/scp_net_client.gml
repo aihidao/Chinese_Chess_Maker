@@ -2,7 +2,7 @@
 spr_cont();
 
 var type = network_socket_tcp;
-var ip = "127.0.0.1";
+var ip = instance_find(obj_input, 0).stringbox;
 var port = 7521;
 global.client_socket = network_create_socket(type);
 network_connect(global.client_socket, ip, port);

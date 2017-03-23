@@ -12,6 +12,7 @@ for(i=0;i<ds_list_size(global.clients);i++){
 for(i=0;i<global.player_number;i++){
     global.player_status[i]=3;
 }
+global.player_status[global.mine]=4;
 scr_ready_room();
 scr_gaming();
 instance_destroy();

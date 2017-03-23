@@ -99,19 +99,21 @@
       <scripts name="Main">
         <script>scripts\scr_received_packet.gml</script>
         <script>scripts\scr_gaming.gml</script>
-      </scripts>
-      <scripts name="Type">
-        <script>scripts\scr_new_player.gml</script>
+        <script>scripts\scr_move.gml</script>
+        <script>scripts\scr_eat.gml</script>
       </scripts>
       <scripts name="Client_">
         <script>scripts\scr_client_gaming.gml</script>
         <script>scripts\scr_ready_info.gml</script>
         <script>scripts\scr_ready.gml</script>
         <script>scripts\scr_ready_cancel.gml</script>
+        <script>scripts\scr_next.gml</script>
       </scripts>
       <scripts name="server">
         <script>scripts\scr_ready_room.gml</script>
         <script>scripts\scr_game_start.gml</script>
+        <script>scripts\scr_next_player.gml</script>
+        <script>scripts\scr_new_player.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -186,6 +188,7 @@
       <object>objects\obj_number_input</object>
       <object>objects\obj_english_input</object>
       <object>objects\obj_button</object>
+      <object>objects\obj_join_button</object>
     </objects>
     <objects name="game">
       <object>objects\obj_gamer</object>

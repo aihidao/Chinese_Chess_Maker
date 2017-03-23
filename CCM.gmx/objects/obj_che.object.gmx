@@ -61,7 +61,16 @@ with(obj_pp){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.remove_piece=0){
+            <string>flag=0;
+if(global.mine!=-1){
+    for(i=0;i&lt;8;i++){
+        temp=ds_list_find_value(global.player_info,global.mine*8+i);
+        if(i==image_index-1&amp;&amp;temp==1){
+            flag=1;
+        }
+    }
+}
+if(global.remove_piece=0&amp;&amp;flag=1){
     p_x=x/50;
     p_y=y/50;
     global.select_type=global.pieces[p_x,p_y];
@@ -135,15 +144,17 @@ with(obj_pp){
             } 
         }
     }
-}else{
-       
-       instance_destroy();
-       with(obj_pp){
-           instance_destroy();
-       }
-       global.pieces[x/50,y/50]=0;
-       global.select=0;
+}else if(global.mine==-1){
+            instance_destroy();
+            with(obj_pp){
+               instance_destroy();
+           }
+           global.pieces[x/50,y/50]=0;
+           global.select=0;
 }
+       
+       
+
 
 
 

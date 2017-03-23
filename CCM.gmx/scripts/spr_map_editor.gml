@@ -7,6 +7,7 @@ while(global.player_number<2||global.player_number>8){
     global.player_number=get_integer("请输入玩家人数(2~8)",2);
 }
 */
+global.mine=-1;
 global.map_name=instance_find(obj_input, 0).stringbox;
 global.ROW=real(instance_find(obj_input, 1).stringbox);
 global.COL=real(instance_find(obj_input, 2).stringbox);

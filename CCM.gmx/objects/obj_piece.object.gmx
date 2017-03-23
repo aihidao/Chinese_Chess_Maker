@@ -54,8 +54,31 @@ image_index=img_ind;
           <argument>
             <kind>1</kind>
             <string>///eat
-
-if(global.place_promit[x/50,y/50]==2&amp;&amp;img_ind!=global.select.img_ind){
+flag=0;
+if(global.player_status[global.mine]==4){
+    flag=1;
+}
+if(global.place_promit[x/50,y/50]==2&amp;&amp;img_ind!=global.select.img_ind&amp;&amp;flag==1){
+    buff=buffer_create(1024,buffer_grow,1);
+    buffer_seek(buff,buffer_seek_start,0);
+    buffer_write(buff,buffer_u8,global.EAT);
+    buffer_write(buff,buffer_u16,global.select_type);  
+    buffer_write(buff,buffer_u16,global.select.x);              //x
+    buffer_write(buff,buffer_u16,global.select.y);   //y
+    buffer_write(buff,buffer_u16,x);   //tx
+    buffer_write(buff,buffer_u16,y);   //ty
+    //server
+    if(global.mine==0){
+        for(i=0;i&lt;ds_list_size(global.clients);i++){
+            client=ds_list_find_value(global.clients, i);
+            player_socket=ds_map_find_value(client,'player_socket');
+            network_send_packet(player_socket,buff,buffer_tell(buff));
+        }
+    }else if(global.mine!=-1){  //client
+        network_send_packet(global.client_socket,buff,buffer_tell(buff));
+    }
+    buffer_delete(buff);
+    
      global.pieces[global.select.x/50,global.select.y/50]=0;
      if(global.select_type%100==global.BING||global.select_type%100==global.ZU){
         global.select.step++;
@@ -66,6 +89,7 @@ if(global.place_promit[x/50,y/50]==2&amp;&amp;img_ind!=global.select.img_ind){
      global.select_type=0;
      global.select=-1;    
      instance_destroy();
+     scr_next_player();
 }
 with(obj_pp){
     instance_destroy();
