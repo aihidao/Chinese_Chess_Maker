@@ -40,13 +40,13 @@ for(i=0;i<global.ROW;i++){
     }
 }
 
-for(i=0;i<global.player_number;++i){
+for(i=0;i<global.player_number;i++){
     for(j=0;j<8;j++){
-        global.player[i,j]=ds_list_find_value(global.player_info,i*global.player_number+j);
+        global.player[i,j]=ds_list_find_value(global.player_info,i*8+j);
     }
 }
 
-for(i=0;i<8;++i){
+for(i=0;i<8;i++){
     global.player_side[i]=ds_list_find_value(global.side_info,i);
 }
 
