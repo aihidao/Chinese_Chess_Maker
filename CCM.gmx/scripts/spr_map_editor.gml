@@ -1,4 +1,5 @@
 spr_cont();
+global.LOC_SIDE=global.SOUNTH;
 /*
 global.map_name=get_string("请输入地图名称","NewMap");
 global.ROW=get_integer("请输入棋盘宽度",9);

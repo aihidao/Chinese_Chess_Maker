@@ -239,6 +239,8 @@
       <object>objects\obj_english_input</object>
       <object>objects\obj_button</object>
       <object>objects\obj_join_button</object>
+      <object>objects\obj_draw_em</object>
+      <object>objects\obj_draw_jg</object>
     </objects>
     <objects name="game">
       <object>objects\obj_gamer</object>

@@ -29,9 +29,11 @@
 be_select=0;
 image_speed=0;
 text_title='';
+
 default_value='';
 min_value=0;
 max_value=0;
+
 //draw_sprite(spr_textinput,0,x,y);
 //input_type=-1;
 </string>

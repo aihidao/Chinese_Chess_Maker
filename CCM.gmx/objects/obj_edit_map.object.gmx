@@ -30,18 +30,31 @@ rm_ME=room_add();
 room_set_width(rm_ME,global.window_width);
 room_set_height(rm_ME,global.window_height);
 
-global.name_input=room_instance_add(rm_ME, global.window_width/2, global.window_height/2, obj_chinese_input);
-global.row_input=room_instance_add(rm_ME, global.window_width/2, global.window_height/2+50, obj_number_input);
-global.col_input=room_instance_add(rm_ME, global.window_width/2, global.window_height/2+100, obj_number_input);
-global.p_n_input=room_instance_add(rm_ME, global.window_width/2, global.window_height/2+150, obj_number_input);
+text_x=global.window_width/2;
+text_y=global.window_height/2;
 
-room_instance_add(rm_ME, global.window_width/2, global.window_height/2+200, obj_button);
+draw_set_color(c_black);
+draw_set_font(fot_chinese);
+draw_text(text_x-50,text_y+5,'棋谱名称:');
+draw_text(text_x-50,text_y+5+50,'棋谱宽度:');
+draw_text(text_x-50,text_y+5+50,'棋谱高度:');
+draw_text(text_x-50,text_y+5+50,'玩家数量:');
+
+global.name_input=room_instance_add(rm_ME, text_x, text_y, obj_chinese_input);
+global.row_input=room_instance_add(rm_ME, text_x, text_y+50, obj_number_input);
+global.col_input=room_instance_add(rm_ME, text_x, text_y+100, obj_number_input);
+global.p_n_input=room_instance_add(rm_ME, text_x, text_y+150, obj_number_input);
+room_instance_add(rm_ME, 0, 0, obj_draw_em);
+room_instance_add(rm_ME, text_x, text_y+200, obj_button);
 
 room_set_persistent(rm_ME,false);
 room_set_background_colour(rm_ME, c_purple, true);
 display_set_gui_size(global.window_width,global.window_height);
 room_set_view(rm_ME, 0, true, 0,0,global.window_width,global.window_height,0,0,global.window_width,global.window_height,0,0,4,4,-1);
 room_goto(rm_ME);
+
+
+
 </string>
           </argument>
         </arguments>
