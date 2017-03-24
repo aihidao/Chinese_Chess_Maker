@@ -40,7 +40,7 @@ global.ZU=10;
 global.CLEAR=12;
 
 //-------------------------player status------------------
-global.player_status=0;
+//global.player_status=0;
 global.mine=-1;//overwatch
 //-------------------------conmunication code-------------
 //

@@ -77,6 +77,12 @@ for(i=0;i&lt;global.player_number;i++){
         }
     }
 }
+switch(global.LOC_SIDE){
+    case global.SOUNTH:view_angle[1]=0;;break;
+    case global.NORTH:view_angle[1]=180;;break;
+    case global.EAST:view_angle[1]=270;break;
+    case global.WEST:view_angle[1]=90;break;
+}
 
 
 </string>

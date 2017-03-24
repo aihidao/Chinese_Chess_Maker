@@ -15,7 +15,7 @@
         <sprite>sprites\spr_ma</sprite>
         <sprite>sprites\spr_pao</sprite>
         <sprite>sprites\spr_shi</sprite>
-        <sprite>sprites\sor_renshi</sprite>
+        <sprite>sprites\spr_renshi</sprite>
         <sprite>sprites\spr_shuai</sprite>
         <sprite>sprites\spr_mumu</sprite>
         <sprite>sprites\spr_xiang</sprite>
@@ -23,12 +23,42 @@
       </sprites>
       <sprites name="wAST">
         <sprite>sprites\spr_che_1</sprite>
+        <sprite>sprites\spr_pao_1</sprite>
+        <sprite>sprites\spr_jiang_1</sprite>
+        <sprite>sprites\spr_ma_1</sprite>
+        <sprite>sprites\spr_bing_1</sprite>
+        <sprite>sprites\spr_zu_1</sprite>
+        <sprite>sprites\spr_mumu_1</sprite>
+        <sprite>sprites\spr_shuai_1</sprite>
+        <sprite>sprites\spr_xiang_1</sprite>
+        <sprite>sprites\spr_renshi_1</sprite>
+        <sprite>sprites\spr_shi_1</sprite>
       </sprites>
       <sprites name="NORTH">
         <sprite>sprites\spr_che_2</sprite>
+        <sprite>sprites\spr_bing_2</sprite>
+        <sprite>sprites\spr_jiang_2</sprite>
+        <sprite>sprites\spr_ma_2</sprite>
+        <sprite>sprites\spr_zu_2</sprite>
+        <sprite>sprites\spr_xiang_2</sprite>
+        <sprite>sprites\spr_mumu_2</sprite>
+        <sprite>sprites\spr_shuai_2</sprite>
+        <sprite>sprites\spr_shi_2</sprite>
+        <sprite>sprites\spr_renshi_2</sprite>
+        <sprite>sprites\spr_pao_2</sprite>
       </sprites>
       <sprites name="EAST">
+        <sprite>sprites\spr_jiang_3</sprite>
         <sprite>sprites\spr_che_3</sprite>
+        <sprite>sprites\spr_bing_3</sprite>
+        <sprite>sprites\spr_zu_3</sprite>
+        <sprite>sprites\spr_pao_3</sprite>
+        <sprite>sprites\spr_xiang_3</sprite>
+        <sprite>sprites\spr_mumu_3</sprite>
+        <sprite>sprites\spr_shuai_3</sprite>
+        <sprite>sprites\spr_shi_3</sprite>
+        <sprite>sprites\spr_renshi_3</sprite>
+        <sprite>sprites\spr_ma_3</sprite>
       </sprites>
     </sprites>
     <sprites name="map_editor">
@@ -97,6 +127,12 @@
     <scripts name="maiin">
       <script>scripts\scp_main_cont.gml</script>
       <script>scripts\scp_my_net_status.gml</script>
+      <scripts name="aim_move">
+        <script>scripts\scr_aim_up.gml</script>
+        <script>scripts\scr_aim_down.gml</script>
+        <script>scripts\scr_aim_left.gml</script>
+        <script>scripts\scr_aim_right.gml</script>
+      </scripts>
     </scripts>
     <scripts name="gameing">
       <script>scripts\spr_gaming.gml</script>

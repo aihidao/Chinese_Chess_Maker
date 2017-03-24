@@ -1,3 +1,13 @@
 global.sounth_temp=1;
 view_angle[1]=0;
-object_set_sprite( obj_che, spr_che);
+object_set_sprite(obj_che, spr_che);
+object_set_sprite(obj_bing, spr_bing);
+object_set_sprite( obj_jiang, spr_jiang);
+object_set_sprite( obj_ma, spr_ma);
+object_set_sprite( obj_pao, spr_pao);
+object_set_sprite( obj_shi, spr_shi);
+object_set_sprite( obj_renshi, spr_renshi);
+object_set_sprite( obj_shuai, spr_shuai);
+object_set_sprite( obj_xiang, spr_xiang);
+object_set_sprite( obj_mumu, spr_mumu);
+object_set_sprite( obj_zu, spr_zu);

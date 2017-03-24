@@ -1,0 +1,12 @@
+if(global.LOC_SIDE==global.SOUNTH||global.LOC_SIDE==global.NORTH){
+    limit=global.window_height;
+}else{
+    limit=global.window_width-global.mune_width;
+}
+with(obj_aim){
+    if(global.COL*50>limit){
+        if(y>limit/2){
+            y-=global.screen_move_speed;
+        }
+    }
+}

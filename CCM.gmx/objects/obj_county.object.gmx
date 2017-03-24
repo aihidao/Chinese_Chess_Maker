@@ -64,7 +64,7 @@ temp_v=global.game_map[x/50,y/50];
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy();
+            <string>//instance_destroy();
 </string>
           </argument>
         </arguments>

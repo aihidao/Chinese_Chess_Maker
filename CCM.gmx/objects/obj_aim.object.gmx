@@ -25,11 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///up press
-if((global.margin_height+y)&gt;=global.window_height/2){
-    y-=global.screen_move_speed;
-}else{
-    y=global.window_height/2;
+            <string>switch(global.LOC_SIDE){
+    case global.SOUNTH:scr_aim_up();break;
+    case global.NORTH:scr_aim_down();break;
+    case global.EAST:scr_aim_left();break;
+    case global.WEST:scr_aim_right();break;
 }
 </string>
           </argument>
@@ -53,11 +53,11 @@ if((global.margin_height+y)&gt;=global.window_height/2){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///s button
-if((y+global.margin_height)&lt;=global.COL*50-(global.window_height/2)){
-    y+=global.screen_move_speed;
-}else{
-    y=global.COL*50-(global.window_height/2);
+            <string>switch(global.LOC_SIDE){
+    case global.SOUNTH:scr_aim_down();break;
+    case global.NORTH:scr_aim_up();break;
+    case global.EAST:scr_aim_right();break;
+    case global.WEST:scr_aim_left();break;
 }
 </string>
           </argument>
@@ -81,11 +81,11 @@ if((y+global.margin_height)&lt;=global.COL*50-(global.window_height/2)){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///d button
-if((global.ROW*50-x)&gt;=(global.window_width-global.mune_width)/2){
-    x+=global.screen_move_speed;
-}else{
-    x=global.ROW*50-(global.window_width-global.mune_width)/2;
+            <string>switch(global.LOC_SIDE){
+    case global.SOUNTH:scr_aim_right();break;
+    case global.NORTH:scr_aim_left();break;
+    case global.EAST:scr_aim_up();break;
+    case global.WEST:scr_aim_down();break;
 }
 </string>
           </argument>
@@ -109,11 +109,11 @@ if((global.ROW*50-x)&gt;=(global.window_width-global.mune_width)/2){
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///a button
-if((x+global.margin_width)&gt;=(global.window_width/2-global.mune_width)){
-    x-=global.screen_move_speed;
-}else{
-    x=(global.window_width/2-global.mune_width);
+            <string>switch(global.LOC_SIDE){
+    case global.SOUNTH:scr_aim_left();break;
+    case global.NORTH:scr_aim_right();break;
+    case global.EAST:scr_aim_down();break;
+    case global.WEST:scr_aim_up();break;
 }
 </string>
           </argument>

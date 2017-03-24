@@ -1,3 +1,13 @@
 global.east_temp=1;
 view_angle[1]=90;
 object_set_sprite( obj_che, spr_che_3);
+object_set_sprite(obj_bing, spr_bing_3);
+object_set_sprite( obj_jiang, spr_jiang_3);
+object_set_sprite( obj_ma, spr_ma_3);
+object_set_sprite( obj_pao, spr_pao_3);
+object_set_sprite( obj_shi, spr_shi_3);
+object_set_sprite( obj_renshi, spr_renshi_3);
+object_set_sprite( obj_shuai, spr_shuai_3);
+object_set_sprite( obj_xiang, spr_xiang_3);
+object_set_sprite( obj_mumu, spr_mumu_3);
+object_set_sprite( obj_zu, spr_zu_3);
