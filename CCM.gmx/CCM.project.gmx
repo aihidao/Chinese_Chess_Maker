@@ -3,8 +3,29 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>bgm.mid</name>
+      <exists>-1</exists>
+      <size>71462</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>bgm.mid</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\bgm</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="pieces">
       <sprite>sprites\spr_pieces</sprite>
@@ -88,7 +109,7 @@
     <sprite>sprites\sprite34</sprite>
     <sprites name="Main_">
       <sprite>sprites\spr_edit_map</sprite>
-      <sprite>sprites\spr_revolution</sprite>
+      <sprite>sprites\spr_gamesetting</sprite>
       <sprite>sprites\spr_load</sprite>
     </sprites>
     <sprites name="textbox">
@@ -100,6 +121,13 @@
     <sprite>sprites\spr_cancel</sprite>
     <sprite>sprites\spr_join</sprite>
     <sprite>sprites\spr_start</sprite>
+    <sprites name="gamesetting">
+      <sprite>sprites\resolution</sprite>
+      <sprite>sprites\spr_submit</sprite>
+      <sprite>sprites\spr_leftbutton</sprite>
+      <sprite>sprites\spr_right</sprite>
+      <sprite>sprites\spr_soundv</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -226,7 +254,6 @@
       <object>objects\obj_edit_gui</object>
       <object>objects\obj_edit_map</object>
       <object>objects\obj_pp</object>
-      <object>objects\obj_revolution</object>
     </objects>
     <objects name="main">
       <object>objects\obj_create_room</object>
@@ -253,9 +280,22 @@
       <object>objects\obj_client</object>
       <object>objects\obj_o_s</object>
     </objects>
+    <objects name="GameSetting">
+      <object>objects\obj_revolution</object>
+      <object>objects\obj_submit</object>
+      <object>objects\obj_right</object>
+      <object>objects\obj_vr</object>
+      <object>objects\obj_leftbutton</object>
+      <object>objects\obj_vl</object>
+      <object>objects\object68</object>
+      <object>objects\obj_gamesetting</object>
+      <object>objects\obj_soundv</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main</room>
+    <room>rooms\rm_login</room>
+    <room>rooms\rm_gamesetting</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
