@@ -28,6 +28,11 @@
             <string>///draw gui
 //window_set_size(display_get_gui_width(),display_get_gui_height());
 //surface_resize(application_surface,display_get_gui_width(),display_get_gui_height());
+
+
+object_set_visible(instance_find(obj_create_room, 0),false);
+object_set_visible(instance_find(obj_join_game, 0),false);
+
 scp_main_cont();
 ini_open("game_setting.ini");
 if(ini_section_exists("screen_size")){
@@ -67,9 +72,6 @@ ini_close();
           <argument>
             <kind>1</kind>
             <string>///Draw GUI
-draw_set_font(fot_chinese);
-draw_set_halign(100);
-draw_text_ext(30,30,"象棋制造",10,1000);
 
 </string>
           </argument>

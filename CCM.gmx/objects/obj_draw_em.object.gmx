@@ -28,12 +28,14 @@
             <string>text_x=global.window_width/2;
 text_y=global.window_height/2;
 
+text_margin=70;
+text_back=180;
 draw_set_color(c_black);
 draw_set_font(fot_chinese);
-draw_text(text_x-70,text_y+5,'棋谱名称:');
-draw_text(text_x-70,text_y+5+50,'棋谱宽度:');
-draw_text(text_x-70,text_y+5+100,'棋谱高度:');
-draw_text(text_x-70,text_y+5+150,'玩家数量:');
+draw_text(text_x-text_back,text_y-100,'棋谱名称:');
+draw_text(text_x-text_back,text_y-100+text_margin,'棋谱宽度:');
+draw_text(text_x-text_back,text_y-100+text_margin*2,'棋谱高度:');
+draw_text(text_x-text_back,text_y-100+text_margin*3,'玩家数量:');
 </string>
           </argument>
         </arguments>

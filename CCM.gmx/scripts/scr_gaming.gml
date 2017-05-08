@@ -23,7 +23,7 @@ for(i=0;i<global.ROW;i++){
         }
             
             
-        with(obj_ready){
+        with(obj_ui_ready){
             instance_destroy();
         }
     }

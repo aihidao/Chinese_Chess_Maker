@@ -8,6 +8,76 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_speed=0;
+image_index=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index=0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>image_index=1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="6" enumb="0">
       <action>
         <libid>1</libid>
@@ -30,28 +100,30 @@ rm_ME=room_add();
 room_set_width(rm_ME,global.window_width);
 room_set_height(rm_ME,global.window_height);
 
-text_x=global.window_width/2;
-text_y=global.window_height/2;
-
+text_x=global.window_width/2-100;
+text_y=global.window_height/2-100;
+text_margin=70;
+text_back=350;
 draw_set_color(c_black);
 draw_set_font(fot_chinese);
-draw_text(text_x-50,text_y+5,'棋谱名称:');
-draw_text(text_x-50,text_y+5+50,'棋谱宽度:');
-draw_text(text_x-50,text_y+5+50,'棋谱高度:');
-draw_text(text_x-50,text_y+5+50,'玩家数量:');
+draw_text(text_x-text_back,text_y-10,'棋谱名称:');
+draw_text(text_x-text_back,text_y-10+text_margin,'棋谱宽度:');
+draw_text(text_x-text_back,text_y-10+text_margin*2,'棋谱高度:');
+draw_text(text_x-text_back,text_y-10+text_margin*3,'玩家数量:');
 
 global.name_input=room_instance_add(rm_ME, text_x, text_y, obj_chinese_input);
-global.row_input=room_instance_add(rm_ME, text_x, text_y+50, obj_number_input);
-global.col_input=room_instance_add(rm_ME, text_x, text_y+100, obj_number_input);
-global.p_n_input=room_instance_add(rm_ME, text_x, text_y+150, obj_number_input);
+global.row_input=room_instance_add(rm_ME, text_x, text_y+text_margin, obj_number_input);
+global.col_input=room_instance_add(rm_ME, text_x, text_y+text_margin*2, obj_number_input);
+global.p_n_input=room_instance_add(rm_ME, text_x, text_y+text_margin*3, obj_number_input);
 room_instance_add(rm_ME, 0, 0, obj_draw_em);
-room_instance_add(rm_ME, text_x, text_y+200, obj_button);
+room_instance_add(rm_ME, text_x, text_y+text_margin*4, obj_em_submit);
 
 room_set_persistent(rm_ME,false);
 room_set_background_colour(rm_ME, c_purple, true);
 display_set_gui_size(global.window_width,global.window_height);
 room_set_view(rm_ME, 0, true, 0,0,global.window_width,global.window_height,0,0,global.window_width,global.window_height,0,0,4,4,-1);
 room_goto(rm_ME);
+keyboard_string="";
 
 
 

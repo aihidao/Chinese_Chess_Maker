@@ -70,7 +70,7 @@ if(be_select==1){
 }
 draw_set_color(c_black);
 draw_set_font(fot_chinese);
-draw_text(x-40,y+5,text_title);
+draw_text(x-100,y+10,text_title);
 draw_text(x+15,y+5,stringbox);
 </string>
           </argument>

@@ -126,10 +126,13 @@ for(i=0;i<global.ROW;i++){
 }
 global.gamer_id=0;
 for(i=0;i<global.player_number;++i){
+    if(global.mine==i){
+        room_instance_add(global.gamingroom,global.ROW*50+100,global.COL*50+i*75+25,obj_start);
+    }
     //玩家状态
-    global.gamer[i]=room_instance_add(global.gamingroom,global.ROW*50,global.COL*50+i*75,obj_gamer);
+    global.gamer[i]=room_instance_add(global.gamingroom,global.ROW*50,global.COL*50+i*75,obj_ui_status);
 }
-room_instance_add(global.gamingroom,400,400,obj_start);
+//room_instance_add(global.gamingroom,400,400,obj_start);
 room_instance_add(global.gamingroom,200,400,obj_server);
 //room_instance_add(global.gamingroom,200,400,obj_cancel);
 room_goto(global.gamingroom);
