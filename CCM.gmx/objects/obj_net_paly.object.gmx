@@ -25,8 +25,17 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>obj_optional_button.visible=false;
-obj_input_login.visible=true;
+            <string>if(global.login==0){
+    obj_optional_button.visible=false;
+    obj_input_login.visible=true;
+    obj_login.visible=true;
+}else{
+    obj_optional_button.visible=false;
+    obj_input_login.visible=false;
+    obj_login.visible=false;
+    obj_net_optional.visible=true;
+    
+}
 </string>
           </argument>
         </arguments>

@@ -100,6 +100,7 @@
       <sprite>sprites\spr_exit</sprite>
       <sprite>sprites\spri_ME_county</sprite>
       <sprite>sprites\spr_ui_em_save</sprite>
+      <sprite>sprites\spr_ui_upload</sprite>
       <sprite>sprites\spr_ui_em_exit</sprite>
     </sprites>
     <sprites name="backWorker">
@@ -149,6 +150,7 @@
       <sprite>sprites\spr_soundv</sprite>
       <sprite>sprites\spr_ui_submit</sprite>
     </sprites>
+    <sprite>sprites\spr_ME_mes</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main</background>
@@ -174,6 +176,7 @@
       </scripts>
       <script>scripts\spr_cont.gml</script>
       <script>scripts\scp_save_map.gml</script>
+      <script>scripts\scp_net_save_map.gml</script>
     </scripts>
     <scripts name="maiin">
       <script>scripts\scp_main_cont.gml</script>
@@ -278,13 +281,12 @@
       <object>objects\obj_pp</object>
     </objects>
     <objects name="main">
-      <object>objects\obj_create_room</object>
-      <object>objects\obj_join_game</object>
       <object>objects\obj_edit_map</object>
-      <object>objects\obj_optional_button</object>
       <object>objects\obj_gamesetting</object>
       <objects name="mapEdit_setting">
         <object>objects\obj_em_submit</object>
+        <object>objects\obj_net_upload</object>
+        <object>objects\obj_ME_mes</object>
       </objects>
       <object>objects\obj_local_play</object>
       <object>objects\obj_net_paly</object>
@@ -293,6 +295,15 @@
         <object>objects\obj_ui_status</object>
         <object>objects\obj_ui_ready</object>
         <object>objects\obj_start</object>
+        <object>objects\obj_login</object>
+      </objects>
+      <objects name="optional">
+        <object>objects\obj_create_room</object>
+        <object>objects\obj_net_create</object>
+        <object>objects\obj_join_game</object>
+        <object>objects\obj_net_join</object>
+        <object>objects\obj_optional_button</object>
+        <object>objects\obj_net_optional</object>
       </objects>
     </objects>
     <objects name="text_input">
@@ -333,6 +344,8 @@
     <room>rooms\rm_main</room>
     <room>rooms\rm_login</room>
     <room>rooms\rm_gamesetting</room>
+    <room>rooms\rm_net_select_map</room>
+    <room>rooms\rm_select_map</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

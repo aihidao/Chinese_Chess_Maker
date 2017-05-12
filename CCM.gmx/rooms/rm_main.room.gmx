@@ -10,7 +10,8 @@
   <persistent>-1</persistent>
   <colour>16744448</colour>
   <showcolour>-1</showcolour>
-  <code>if(global.window_width!=-1){
+  <code>global.login=0;
+if(global.window_width!=-1){
     window_set_size(global.window_width,global.window_height);
     surface_resize(application_surface,global.window_width,global.window_height);
     room_set_width(rm_main,global.window_width);
@@ -63,14 +64,17 @@ if audio_exists(bgm)
   </views>
   <instances>
     <instance objName="obj_edit_map" x="381" y="473" name="inst_98E7C5FA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_create_room" x="231" y="271" name="inst_94D76DC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_join_game" x="234" y="373" name="inst_20695DC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_create_room" x="233" y="373" name="inst_94D76DC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_join_game" x="233" y="423" name="inst_20695DC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_gamesetting" x="632" y="474" name="inst_2D90EE89" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_local_play" x="233" y="472" name="inst_9A0202BE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_net_paly" x="81" y="474" name="inst_0B363828" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_window_info" x="128" y="32" name="inst_B8454295" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_input_username" x="132" y="222" name="inst_D7A07311" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_input_pwd" x="131" y="323" name="inst_E8A136D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_input_username" x="180" y="224" name="inst_D7A07311" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_input_pwd" x="179" y="274" name="inst_E8A136D8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_login" x="381" y="373" name="inst_F251157E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_net_create" x="80" y="373" name="inst_E374FBF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_net_join" x="81" y="423" name="inst_633F1F6E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bh_logo" x="32" y="75" w="400" h="120" xo="0" yo="0" id="10000001" name="inst_3C27A65B" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

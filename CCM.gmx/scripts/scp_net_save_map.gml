@@ -50,8 +50,9 @@ ds_map_add_list(global.game_info, "player_info", global.player_info);
 ds_map_add_list(global.game_info, "side_info", global.side_info);
 
 global.game_json=json_encode(global.game_info);
+var str="map_name="+global.map_name+"&player_pwd="+global.password;
+    post = http_post_string("http://localhost:8080/CCM_SCP/login.php", str);
 var game_file= file_text_open_write(working_directory+"/gamemap/"+global.map_name+".cmap");
 file_text_write_string(game_file, global.game_json);
 file_text_close(game_file);
-global.ME_nes="保存成功！";
 

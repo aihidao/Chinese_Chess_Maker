@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spr_map_editor();
+            <string>global.ME_nes="";
+spr_map_editor();
 </string>
           </argument>
         </arguments>

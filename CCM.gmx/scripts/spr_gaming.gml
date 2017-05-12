@@ -1,7 +1,7 @@
 
 spr_cont();
 //加载游戏数据
-global.map_name='四国争';
+//global.map_name='四国争';
 fileid = file_text_open_read(working_directory+"/gamemap/"+global.map_name+".cmap");
 global.game_json=file_text_read_string(fileid);
 global.game_info=json_decode(global.game_json);

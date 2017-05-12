@@ -24,7 +24,23 @@ room_set_background_colour(global.gameroom, c_purple, true);
     global.temp_p_i=0;
     global.temp_t_i=0;
 for(i=0;i<global.player_number;i++){
-   
+    room_instance_add(global.gameroom,global.ROW*50,global.COL*50+(i+1)*20+6*50,obj_player);
+    for(j=0;j<8;j++){
+        room_instance_add(global.gameroom,global.ROW*50+(j+1)*20,global.COL*50+6*50,obj_unit_color);
+        instance_activate_object(obj_unit_color);
+        if(i==j){
+            global.player[i,j]=1;
+            global.player_t[i,j]=room_instance_add(global.gameroom,global.ROW*50+(j+1)*20,global.COL*50+(i+1)*20+6*50,obj_tick);
+            instance_activate_object(obj_unit_color);
+        }else{
+            global.player[i,j]=0;
+            global.player_t[i,j]=room_instance_add(global.gameroom,global.ROW*50+(j+1)*20,global.COL*50+(i+1)*20+6*50,obj_tick);
+            instance_activate_object(obj_unit_color);
+        }
+    }
+}
+/*
+for(i=0;i<global.player_number;i++){
     room_instance_add(global.gameroom,global.ROW*50,global.COL*50+(i+1)*20+7*50,obj_player);
     for(j=0;j<8;j++){
         room_instance_add(global.gameroom,global.ROW*50+(j+1)*20,global.COL*50+7*50,obj_unit_color);
@@ -40,9 +56,10 @@ for(i=0;i<global.player_number;i++){
         }
     }
 }
+*/
 for(i=0;i<8;++i){
     global.temp_s=0;
-    room_instance_add(global.gameroom,global.ROW*50+(i+1)*20,global.COL*50+(global.player_number+1)*20+7*50,obj_side);
+    room_instance_add(global.gameroom,global.ROW*50+(i+1)*20,global.COL*50+(global.player_number+1)*20+6*50,obj_side);
     instance_activate_object(obj_side);
 }
 
@@ -116,6 +133,8 @@ room_instance_add(global.gameroom,50,50,obj_ME_xiang);
 room_instance_add(global.gameroom,50,50,obj_ME_mumu);
 room_instance_add(global.gameroom,50,50,obj_ME_zu);
 room_instance_add(global.gameroom,50,50,obj_ME_clear);
+room_instance_add(global.gameroom,global.ROW*50,global.COL*50,obj_ME_mes);
+room_instance_add(global.gameroom,global.ROW*50,global.COL*50+global.window_height-100,obj_net_upload);
 room_instance_add(global.gameroom,global.ROW*50,global.COL*50+global.window_height-50,obj_ME_save);
 room_instance_add(global.gameroom,global.ROW*50+100,global.COL*50+global.window_height-50,obj_exit);
 //---
