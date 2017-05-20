@@ -80,6 +80,7 @@ if(visible==true){
     //room_set_background_colour(global.select_map, c_purple, true);
     
     //global.map_1=room_instance_add(global.select_map,100,100,obj_select_map);
+    global.game_mode=0;
     room_goto(rm_select_map);
    
     

@@ -98,6 +98,12 @@ image_index=0;
             <string>image_index=2;
 with(obj_soundv){
     obj_soundv.image_index++;
+    global.pitch=obj_soundv.image_index/5;
+    if sound_exists(bgm)
+    {
+       //audio_play_sound(bgm, 0, true);
+       audio_sound_gain(bgm,global.pitch,0);
+    }
 }
 
 </string>

@@ -97,6 +97,7 @@ visible=false;
           <argument>
             <kind>1</kind>
             <string>//ip info 
+/*
 rm_JG=room_add();
 room_set_width(rm_JG,global.window_width);
 room_set_height(rm_JG,global.window_height);
@@ -110,6 +111,9 @@ room_set_background_colour(rm_JG, c_purple, true);
 display_set_gui_size(global.window_width,global.window_height);
 room_set_view(rm_JG, 0, true, 0,0,global.window_width,global.window_height,0,0,global.window_width,global.window_height,0,0,4,4,-1);
 room_goto(rm_JG);
+*/
+global.game_mode=1;
+room_goto(rm_select_room);
 
 
 

@@ -8,7 +8,6 @@ global.select_id=0;
 global.select=0;
 global.remove_piece=0;
 
-global.player_number=9;
 
 global.player_side[0]=0;
 global.player_side[1]=2;

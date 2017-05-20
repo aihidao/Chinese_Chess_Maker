@@ -1,36 +1,11 @@
-#define scr_received_packet
-///scr_received_packet(buffer);
-var buffer = argument[0];// 1, 100, 120
-
-message_id = buffer_read(buffer, buffer_u8);
-switch(message_id){
-    case global.NEWPLAYER:scr_new_player(buffer);break;
-    case global.NEWPLAYER2:scr_new_player2(buffer);break;
-    case global.JOINNETROOM:scr_new_net_player(buffer);break;
-    case global.JIONROOM:scr_new_player(buffer);break;
-    case global.NET_MARKPLAYER:scr_select_room(buffer);break;
-    case global.MARKHOST:scr_new_behost(buffer);break;
-    case global.MARKPLAYER:scr_client_gaming(buffer);break;
-    case global.READYROOM:scr_ready_room(buffer);break;
-    case global.READYINFO:scr_ready_info(buffer);break;
-    case global.PLAYERREADY:scr_ready(buffer);break;
-    case global.PLAYERCANCELREADY:scr_ready_cancel(buffer);break;
-    case global.GAMESTART:scr_gaming(buffer);break;
-    case global.MOVE:scr_move(buffer);break;
-    case global.EAT:scr_eat(buffer);break;
-    case global.NEXT:scr_next(buffer);break;
-    
-    case global.ROOMHOST_CREAT:scr_net_room_has_set(buffer);break;
-}
-
-
-#define scr_new_net_player
-
-//------------------------------------------------------------------------
 spr_cont();
 var buffer = argument[0];
+
 global.mine=buffer_read(buffer,buffer_u8);
+global.game_json=buffer_read(buffer,buffer_string);
+
 global.game_info=json_decode(global.game_json);
+
 global.map_name=ds_map_find_value(global.game_info,"map_name");
 global.ROW=ds_map_find_value(global.game_info, "ROW");
 global.COL=ds_map_find_value(global.game_info, "COL");
@@ -169,17 +144,5 @@ var alignment = 1;
 buffer=buffer_create(size,type,alignment);
     buffer_seek(buffer,buffer_seek_start,0);
     buffer_write(buffer,buffer_u8,global.READYROOM);
-    buffer_write(buffer,buffer_u8,global.map_id);
     network_send_packet(global.client_socket,buffer,buffer_tell(buffer));
     buffer_delete(buffer);
-    
-    
-    
-   /*
- buffer=buffer_create(size,type,alignment);
-    buffer_seek(buffer,buffer_seek_start,0);
-    buffer_write(buffer,buffer_u8,global.NEWPLAYER2);
-    buffer_write(buffer,buffer_string,global.username);
-    network_send_packet(global.client_socket,buffer,buffer_tell(buffer));
-    buffer_delete(buffer);
-    */

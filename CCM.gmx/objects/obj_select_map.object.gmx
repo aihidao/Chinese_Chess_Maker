@@ -26,6 +26,10 @@
           <argument>
             <kind>1</kind>
             <string>map_name='';
+player_num="";
+map_id="";
+send_mes=0;
+post="";
 visible=false;
 image_speed=0;
 image_index=0;
@@ -52,9 +56,60 @@ image_index=0;
           <argument>
             <kind>1</kind>
             <string>if(visible==true){
-    global.map_name=map_name;
-    spr_gaming();
+    if(global.game_mode==0){
+        global.map_name=map_name;
+        spr_gaming();
+    }else if(global.game_mode==1){
+    global.map_id=map_id;
+     var str="map_id="+map_id;
+        post = http_post_string("http://localhost:8080/CCM_SCP/return_map.php", str);
+        send_mes=1;
+    }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="62">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(send_mes==1){
+        var r_str = "null";
+    if ds_map_find_value(async_load, "id") == post
+       {
+       if ds_map_find_value(async_load, "status") == 0
+          {
+          r_str = ds_map_find_value(async_load, "result");
+          
+          if(r_str!="NOMAP"){
+                global.game_json=r_str;
+                scr_net_create();
+            }else{
+                global.login=2;
+            }
+            
+          }else{
+            r_str="notinh!";
+          }
+       }
+    
+}
+send_mes=0;
 </string>
           </argument>
         </arguments>
@@ -81,6 +136,8 @@ image_index=0;
     draw_set_font(fot_chinese);
     draw_set_color(c_black);
     draw_text(x+4,y+4,map_name);
+    draw_text(x+220,y+20,player_num);
+    draw_text(x+4,y+20,"地图ID:"+map_id);
 }
 
 </string>

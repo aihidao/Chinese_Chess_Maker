@@ -25,6 +25,7 @@
   <NewExtensions/>
   <sounds name="sound">
     <sound>sound\bgm</sound>
+    <sound>sound\put</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="pieces">
@@ -175,6 +176,7 @@
         <script>scripts\scp_draw_county.gml</script>
       </scripts>
       <script>scripts\spr_cont.gml</script>
+      <script>scripts\spr_cont_2.gml</script>
       <script>scripts\scp_save_map.gml</script>
       <script>scripts\scp_net_save_map.gml</script>
     </scripts>
@@ -205,6 +207,7 @@
         <script>scripts\scr_gaming.gml</script>
         <script>scripts\scr_move.gml</script>
         <script>scripts\scr_eat.gml</script>
+        <script>scripts\scr_select_room.gml</script>
       </scripts>
       <scripts name="Client_">
         <script>scripts\scr_client_gaming.gml</script>
@@ -218,6 +221,16 @@
         <script>scripts\scr_game_start.gml</script>
         <script>scripts\scr_next_player.gml</script>
         <script>scripts\scr_new_player.gml</script>
+        <script>scripts\scr_new_behost.gml</script>
+      </scripts>
+    </scripts>
+    <scripts name="net_net">
+      <script>scripts\scr_net_create.gml</script>
+      <script>scripts\scr_net_create_client.gml</script>
+      <script>scripts\scp_net_net_host.gml</script>
+      <script>scripts\scr_net_room_has_set.gml</script>
+      <scripts name="server">
+        <script>scripts\scr_new_player2.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -292,13 +305,16 @@
       <object>objects\obj_net_paly</object>
       <objects name="net">
         <object>objects\obj_select_map</object>
+        <object>objects\obj_select_room</object>
         <object>objects\obj_ui_status</object>
         <object>objects\obj_ui_ready</object>
         <object>objects\obj_start</object>
         <object>objects\obj_login</object>
+        <object>objects\obj_NSR_toll</object>
       </objects>
       <objects name="optional">
         <object>objects\obj_create_room</object>
+        <object>objects\obj_net_create_room</object>
         <object>objects\obj_net_create</object>
         <object>objects\obj_join_game</object>
         <object>objects\obj_net_join</object>
@@ -327,6 +343,8 @@
       <object>objects\obj_server</object>
       <object>objects\obj_client</object>
       <object>objects\obj_o_s</object>
+      <object>objects\obj_net_server</object>
+      <object>objects\obj_net_client</object>
     </objects>
     <objects name="GameSetting">
       <object>objects\obj_revolution</object>
@@ -346,6 +364,7 @@
     <room>rooms\rm_gamesetting</room>
     <room>rooms\rm_net_select_map</room>
     <room>rooms\rm_select_map</room>
+    <room>rooms\rm_select_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

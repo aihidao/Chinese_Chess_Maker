@@ -96,7 +96,12 @@ image_index=0;
           <argument>
             <kind>1</kind>
             <string>image_index=2;
+
+  global.revolution=obj_revolution.image_index;
+    global.sound=(obj_soundv.image_index);
+
 switch(obj_revolution.image_index){
+  
     case 0:global.window_width=800;global.window_height=600;break;
     case 1:global.window_width=1024;global.window_height=768;break;
     case 2:global.window_width=1366;global.window_height=768;break;
