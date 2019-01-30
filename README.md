@@ -13,5 +13,5 @@ Chinese Chess Maker 是我一直以来的一个想法，让玩家编辑棋盘和
 打算等到自己闲下来，用QT写一遍。
 
 （但是以上代码均可进行编译，以及玩家对战，可能需要一些调试。还有不完善的功能，以及游戏不能判定游戏结束。等闲下来写QT版本把。）
-
+[Demo1](https://github.com/Chinese_Chess_Maker/blob/master/CCM.gmx/background/images/bg_first.png)
 [Demo](./Chinese_Chess_Maker/blob/master/CCM.gmx/background/images/bg_first.png)
